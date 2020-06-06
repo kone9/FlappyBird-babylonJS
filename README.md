@@ -1,5 +1,5 @@
 # FlappyBird-babylonJS
-Un FlappyBird  desarrollado con babylon.JS para el estudio del, motor y sus herramientas comparando con otros engine
+Un FlappyBird  desarrollado con babylon.JS para el estudio del motor y sus herramientas comparando con otros engine
 
 En este proyecto investigo el framwoek para encontrar simulitudes con GameEngine como Godot o unity.
 Seguire documentando lo descubierto aqui abajo.
