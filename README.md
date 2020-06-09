@@ -1,7 +1,7 @@
 # FlappyBird-babylonJS
 
 playgrund babylon test
-https://playground.babylonjs.com/#BVD9GZ#1
+https://playground.babylonjs.com/#BVD9GZ#2
 
 Un FlappyBird  desarrollado con babylon.JS para el estudio del motor y sus herramientas comparando con otros engine
 
