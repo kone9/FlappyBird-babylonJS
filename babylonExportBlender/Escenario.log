@@ -16,8 +16,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 	processing begun of mesh:  columnas
 		processing begun of material:  Material
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		num positions      :  133
 		num normals        :  133
@@ -31,16 +29,10 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  blanco
 		processing begun of material:  rojo
 			processing texture amarillo
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/amarillo.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 			processing texture blanco
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/blanco.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 			processing texture rojo
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/rojo.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		processing begun of multimaterial:  Escenario.Multimaterial#0
 		num positions      :  151
@@ -84,12 +76,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 			processing texture amarillo
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/amarillo.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		processing begun of multimaterial:  Escenario.Multimaterial#1
 		num positions      :  45
@@ -103,8 +91,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#2
@@ -119,8 +105,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#3
@@ -135,8 +119,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#4
@@ -161,8 +143,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#5
@@ -187,8 +167,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#6
@@ -213,8 +191,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
-				WARNING: Exception during copy:
-					[Errno 2] No existe el archivo o el directorio: '/home/ariel/Escritorio/archivos para luego borrar varios proyectos/../Documentos/babylon_proyectos/flappy bird babylon/babylonExportBlender/verde.jpg'
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#7
@@ -243,7 +219,177 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
-	processing begun of node:  columnasPrincipal
+	processing begun of mesh:  columnaFisicoSuperior.001
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.001
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.002
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.002
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.003
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.003
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.004
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.004
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.005
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.005
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.006
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.006
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.001
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.002
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.003
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.004
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.005
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.006
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
 ========= Writing of JSON file started =========
 	writing mesh:  columnas
 	writing mesh:  pajaro
@@ -262,6 +408,25 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 	writing mesh:  suelo7
 	writing mesh:  columnaFisicoSuperior
 	writing mesh:  columnaFisicoInferior
+	writing mesh:  columnaFisicoSuperior.001
+	writing mesh:  columnaFisicoInferior.001
+	writing mesh:  columnaFisicoSuperior.002
+	writing mesh:  columnaFisicoInferior.002
+	writing mesh:  columnaFisicoSuperior.003
+	writing mesh:  columnaFisicoInferior.003
+	writing mesh:  columnaFisicoSuperior.004
+	writing mesh:  columnaFisicoInferior.004
+	writing mesh:  columnaFisicoSuperior.005
+	writing mesh:  columnaFisicoInferior.005
+	writing mesh:  columnaFisicoSuperior.006
+	writing mesh:  columnaFisicoInferior.006
+	writing mesh:  columnasPrincipal
+	writing mesh:  columnasPrincipal.001
+	writing mesh:  columnasPrincipal.002
+	writing mesh:  columnasPrincipal.003
+	writing mesh:  columnasPrincipal.004
+	writing mesh:  columnasPrincipal.005
+	writing mesh:  columnasPrincipal.006
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.169 secs
+elapsed time:  0 min, 0.2575 secs
