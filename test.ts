@@ -273,7 +273,7 @@ class ManejarEscenas
         // //creo la escena principal
         // var escenaJuego = _EscenaPrincipal.Escena1(_MotorRenderizado.engine, _MotorRenderizado.canvas);
         var escenaJuego = Escena1(engine,canvas);
-        var sceneCreate = escenaJuego
+
 
         // escenaJuego.onBeforeRenderObservable.add(()=>
         // {
@@ -285,15 +285,6 @@ class ManejarEscenas
         //     }
         // })
 
-        window.addEventListener("click", function () { //si presiono click
-            //si es GameOver
-            if(puedoReiniciar)
-            {
-                puedoReiniciar = false//hago que game over sea falso
-                sceneCreate = escenaJuego;//IMPORTANT I LOAD THE SCENE IN THE VARIABLE AGAIN
-            }
-        });
-
         //Esto es el bucle principal de renderizado "Ojo" no confundir con bucle del juego
         //se puede utilizar para cambiar o reiniciar escenas 
         //tengo que cambiar la varibale escena del juego para poder crear interacciones
@@ -301,12 +292,31 @@ class ManejarEscenas
             escenaJuego.render();
         });
 
-        
-
         //para que la ventana se redimensione
         window.addEventListener("resize", function () { //agrego el evento para que constantemente se acutalice el navegador
             engine.resize();
         });
+
+        //////BOTON REINICIAR//////////BOTON REINICIAR//////////BOTON REINICIAR///////
+        var botonReiniciar: UIBotones = new UIBotones();
+        var nuevoBoton = botonReiniciar.BotonReiniciarScene(escenaJuego);
+        nuevoBoton.isVisible = true; 
+        // scene.onAfterRenderObservable.add(() =>
+        // {
+        //     if (this.gameOver == false) nuevoBoton.isVisible = false;
+        //     if (this.gameOver == true) nuevoBoton.isVisible = true;    
+        // })
+
+
+        nuevoBoton.onPointerUpObservable.add(function() {
+            console.log("reinicia!" );
+            escenaJuego = Escena1(engine,canvas);
+            nuevoBoton.isVisible = true; 
+            //scene.dispose();//destruia la escena ahora ya puedo reiniciar
+            //this._gameOver = true;
+            //var botonReiniciar = _UIBotones.BotonReiniciarScene(escenaJuego);
+        });
+
 
         function Escena1(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.Scene //retorna la escena tomo como parametro el motor
         { 
@@ -464,25 +474,6 @@ class ManejarEscenas
                     }
           
                 });
-           
-            //////BOTON REINICIAR//////////BOTON REINICIAR//////////BOTON REINICIAR///////
-            var botonReiniciar: UIBotones = new UIBotones();
-            var nuevoBoton = botonReiniciar.BotonReiniciarScene(scene);
-            nuevoBoton.isVisible = true; 
-            // scene.onAfterRenderObservable.add(() =>
-            // {
-            //     if (this.gameOver == false) nuevoBoton.isVisible = false;
-            //     if (this.gameOver == true) nuevoBoton.isVisible = true;    
-            // })
-    
-    
-            nuevoBoton.onPointerUpObservable.add(function() {
-                console.log("reinicia!" );
-                puedoReiniciar = true;
-                //scene.dispose();//destruia la escena ahora ya puedo reiniciar
-                //this._gameOver = true;
-                //var botonReiniciar = _UIBotones.BotonReiniciarScene(escenaJuego);
-            });
             return scene;
         }
  
