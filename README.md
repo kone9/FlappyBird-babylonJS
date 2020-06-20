@@ -1,5 +1,5 @@
 # FlappyBird-babylonJS
-![Alt Text](https://media.giphy.com/media/VdWDZPu5z74ujti6bk/source.gif)
+![Alt Text](https://media.giphy.com/media/PjP4z5IyOP0GZ9ladE/source.gif)
 
 
 En la práctica trato de hacer un flappybird con babylon.js para entender cómo funciona el motor y qué herramientas posee para el desarrollo de juegos.
