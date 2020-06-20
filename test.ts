@@ -8,7 +8,6 @@
 /// <reference path="babylon.gui.min.js"/>
 
 
-
 class Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
 {
     private _pajaroMesh: BABYLON.AbstractMesh;//guardo el mesh del pajaro en esta variable
@@ -57,8 +56,8 @@ class Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYL
 }
 
 /////aqui empieza la aplicación/////////
-var canvas: HTMLCanvasElement = document.getElementById("renderCanvas") as HTMLCanvasElement;;
-var engine: BABYLON.Engine = new BABYLON.Engine(canvas, true);
+var canvas: HTMLCanvasElement = document.getElementById("renderCanvas") as HTMLCanvasElement;//referencia al html con la etiqueta renderCanvas
+var engine: BABYLON.Engine = new BABYLON.Engine(canvas, true);//creo el motor
 window.addEventListener("resize", function () { //agrego el evento para que constantemente se acutalice el navegador
     engine.resize();
 });
@@ -252,7 +251,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     })
     boton.onPointerClickObservable.addOnce(function()//observable si presiono el boton
     {
-        CrearEscenaPrincipal(engine,canvas);//VUELVO A LLAMAR A LA FUNCION PARA REINICIAR    
+        CrearEscenaPrincipal(engine,canvas);//VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
     })
     
     
@@ -261,11 +260,11 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
         return Math.round(Math.random() * (max - min) + min);
     }
         
-    return scene;
+    return scene;//retorno la escena
 }
 
 //NewScene();
-CrearEscenaPrincipal(engine,canvas);
+CrearEscenaPrincipal(engine,canvas);//creo la escena
 
 //principal renderLoop
 engine.runRenderLoop(function ()

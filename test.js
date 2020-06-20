@@ -60,9 +60,8 @@ var Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON
     return Pajaro;
 }());
 /////aqui empieza la aplicación/////////
-var canvas = document.getElementById("renderCanvas");
-;
-var engine = new BABYLON.Engine(canvas, true);
+var canvas = document.getElementById("renderCanvas"); //referencia al html con la etiqueta renderCanvas
+var engine = new BABYLON.Engine(canvas, true); //creo el motor
 window.addEventListener("resize", function () {
     engine.resize();
 });
@@ -222,15 +221,15 @@ function CrearEscenaPrincipal(engine, canvas) {
         boton.scaleY = 1;
     });
     boton.onPointerClickObservable.addOnce(function () {
-        CrearEscenaPrincipal(engine, canvas); //VUELVO A LLAMAR A LA FUNCION PARA REINICIAR    
+        CrearEscenaPrincipal(engine, canvas); //VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
     });
     function numeroAleatorio(min, max) {
         return Math.round(Math.random() * (max - min) + min);
     }
-    return scene;
+    return scene; //retorno la escena
 }
 //NewScene();
-CrearEscenaPrincipal(engine, canvas);
+CrearEscenaPrincipal(engine, canvas); //creo la escena
 //principal renderLoop
 engine.runRenderLoop(function () {
     scene.render(); //renderizo la escena en el bucle principal
