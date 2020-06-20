@@ -12,6 +12,7 @@ https://kone9.itch.io/flappybird-in-b...
 
 Algunas cosas que se ven en este proyecto con babylon.js.
 importar escenas desde blender3D.
+buscar nodos por nombre y luego utilizarlos
 crear cuerpos físicos a los objetos importados
 detectar colisiones por grupos.
 botones y UI.
@@ -19,7 +20,7 @@ input de teclas.
 reiniciar escenas.
 observables personalizados y concepto de observable
 entre muchas cosas.
-buscar nodos por nombre y luego utilizarlos
+
 
 
 
