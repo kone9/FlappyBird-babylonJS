@@ -31978,6 +31978,10 @@ declare module BABYLON {
          * @see http://doc.babylonjs.com/babylon101/animations#deterministic-lockstep
          */
         static MaxDeltaTime: number;
+
+        onReiniciar: Observable<unknown>;
+        onGameOver: Observable<unknown>;
+        onIniciar: Observable<unknown>;
         /**
          * Factory used to create the default material.
          * @param name The name of the material to create
