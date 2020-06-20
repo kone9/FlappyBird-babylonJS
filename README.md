@@ -3,8 +3,6 @@
 
 
 En la práctica trato de hacer un flappybird con babylon.js para entender cómo funciona el motor y qué herramientas posee para el desarrollo de juegos.
-Nota:Al final del video el audio deja de estar sincronizado con el video,pero creo que se entiende.
-cualquier cosa sobre este proyecto pregunten
 Por ahora no voy a hacer tutoriales sobre babylon.js ya que me parece que Godot sigue siendo una mejor herramienta incluso para web,sin embargo dejo el código fuente por si alguien quiere ver como hice el proyecto
 
 
