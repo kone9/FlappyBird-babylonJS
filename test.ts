@@ -182,6 +182,27 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                 }
             });
             ////////////////////////////////////////////////////////////////////////////////////////////////                ////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS//////////
+            var Puntajes: BABYLON.Mesh[] = scene.getMeshesByTags("puntos") as BABYLON.Mesh[];//busco el nodo padre que contiene a esas columnas
+            Puntajes.forEach(i => { //recorro todos esos objetos
+                i.visibility = 0;//hago invisible las mallas que funcionan para sumar puntos
+                //agrego un action manager a cada columna
+                i.actionManager = new BABYLON.ActionManager(scene);//creo el nuevo action manager
+                //register a new action with the marble's actionManager..this will execute code whenever the marble intersects the "killBox"
+                i.actionManager.registerAction(
+                    new BABYLON.ExecuteCodeAction(
+                        {
+                        trigger:BABYLON.ActionManager.OnIntersectionEnterTrigger,//cuando nu cuerpo entra a esta area
+                        parameter:pajaro//cuando el pajaro entra a esta area
+                        }, 
+                        function(){
+                            console.log("el pajaro entro al area para los puntos");//muestro este mensaje por consola
+                        }
+                    )
+                );
+            });
+            ///////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////                ////////////////////////////////////////////////////////////////////////////////////////////////
             ///PARA MOVER////////////////PARA MOVER/////////////////////PARA MOVER//////////////////
             var velocidadDesplazamiento = 0;
             //Este es el bucle principal con propiedades físicas tambien esta el bucle común
