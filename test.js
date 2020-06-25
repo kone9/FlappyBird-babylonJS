@@ -62,6 +62,8 @@ var Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON
 /////aqui empieza la aplicación/////////
 var canvas = document.getElementById("renderCanvas"); //referencia al html con la etiqueta renderCanvas
 var engine = new BABYLON.Engine(canvas, true); //creo el motor
+var Puntos = document.getElementById("puntos"); //referencía al puntaje
+var botonCssReiniciar = document.getElementById("boton"); //referencía al puntaje
 window.addEventListener("resize", function () {
     engine.resize();
 });
@@ -70,7 +72,10 @@ function CrearEscenaPrincipal(engine, canvas) {
     scene = new BABYLON.Scene(engine); //crea la escena
     scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), new BABYLON.CannonJSPlugin());
     //VARIABLE GAME OVER INTERNA A LA ESCENA
-    var gameOver = false;
+    var puedoReinciar = false;
+    var ConteoDePuntos = 0;
+    Puntos.innerHTML = ConteoDePuntos;
+    botonCssReiniciar.style.visibility = 'hidden'; // hace invisible el boton
     //scene.debugLayer.show();
     //observadores personalizados
     scene.onGameOver = new BABYLON.Observable(); //incia un observable de tipo puedo reiniciar
@@ -145,9 +150,9 @@ function CrearEscenaPrincipal(engine, canvas) {
             //importantisimo detectar colisiones usando "Tags" serian grupos en godot
             if (BABYLON.Tags.GetTags(collidedWith) === "obstaculo") {
                 console.log("colisiono con un obstaculo");
-                gameOver = true;
+                puedoReinciar = true;
                 //puedoReiniciar = true;
-                scene.onGameOver.notifyObservers(gameOver); //cuando llego aqui notifico que es game over
+                scene.onGameOver.notifyObservers(puedoReinciar); //cuando llego aqui notifico que es game over
                 //console.log("GAMEOVER desde la colisicón del pajaro: " + this.gameOverPublico);
                 pajaroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaroFisico.getObjectCenter());
             }
@@ -156,7 +161,7 @@ function CrearEscenaPrincipal(engine, canvas) {
         scene.onPointerObservable.add(function (pointerInfo) {
             switch (pointerInfo.type) {
                 case BABYLON.PointerEventTypes.POINTERDOWN:
-                    if (!gameOver) //sino es GameOver
+                    if (!puedoReinciar) //sino es GameOver
                      {
                         pajaroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
                         pajaroFisico.applyImpulse(new BABYLON.Vector3(0, 0.5, 0), pajaroFisico.getObjectCenter());
@@ -169,7 +174,7 @@ function CrearEscenaPrincipal(engine, canvas) {
         ////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS//////////
         var Puntajes = scene.getMeshesByTags("puntos"); //busco el nodo padre que contiene a esas columnas
         Puntajes.forEach(function (i) {
-            i.visibility = 0; //hago invisible las mallas que funcionan para sumar puntos
+            i.visibility = 1; //hago Visible/invisible las mallas que funcionan para sumar puntos
             //agrego un action manager a cada columna
             i.actionManager = new BABYLON.ActionManager(scene); //creo el nuevo action manager
             //register a new action with the marble's actionManager..this will execute code whenever the marble intersects the "killBox"
@@ -177,6 +182,8 @@ function CrearEscenaPrincipal(engine, canvas) {
                 trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger,
                 parameter: pajaro //cuando el pajaro entra a esta area
             }, function () {
+                ConteoDePuntos += 1;
+                Puntos.innerHTML = ConteoDePuntos; //convierto a string
                 console.log("el pajaro entro al area para los puntos"); //muestro este mensaje por consola
             }));
         });
@@ -187,7 +194,7 @@ function CrearEscenaPrincipal(engine, canvas) {
         //Este es el bucle principal con propiedades físicas tambien esta el bucle común
         scene.onAfterPhysicsObservable.add(function () {
             //console.log(suelo.position.z)
-            if (!gameOver) {
+            if (!puedoReinciar) {
                 velocidadDesplazamiento = -0.006;
             }
             else {
@@ -224,10 +231,20 @@ function CrearEscenaPrincipal(engine, canvas) {
     advancedTexture.addControl(boton);
     boton.isVisible = false;
     boton.isEnabled = false;
+    botonCssReiniciar.isEnabled = false;
     scene.onGameOver.addOnce(function (gameOver) {
-        boton.isVisible = true;
-        boton.isEnabled = true;
+        // // boton.isVisible = true;
+        // // boton.isEnabled = true;
+        setTimeout(function () {
+            botonCssReiniciar.style.visibility = 'visible'; // hace invisible el boton  
+        }, 300);
     });
+    botonCssReiniciar.onclick = function () {
+        console.log("presione sobre el boton");
+        if (puedoReinciar == true) {
+            CrearEscenaPrincipal(engine, canvas); //VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
+        }
+    };
     boton.onPointerEnterObservable.add(function () {
         boton.scaleX = 1.5;
         boton.scaleY = 1.5;

@@ -58,6 +58,9 @@ class Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYL
 /////aqui empieza la aplicación/////////
 var canvas: HTMLCanvasElement = document.getElementById("renderCanvas") as HTMLCanvasElement;//referencia al html con la etiqueta renderCanvas
 var engine: BABYLON.Engine = new BABYLON.Engine(canvas, true);//creo el motor
+let Puntos:InnerHTML = document.getElementById("puntos") as InnerHTML;//referencía al puntaje
+let botonCssReiniciar:InnerHTML = document.getElementById("boton") as InnerHTML;//referencía al puntaje
+
 window.addEventListener("resize", function () { //agrego el evento para que constantemente se acutalice el navegador
     engine.resize();
 });
@@ -70,7 +73,10 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     scene = new BABYLON.Scene(engine);//crea la escena
     scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), new BABYLON.CannonJSPlugin());
     //VARIABLE GAME OVER INTERNA A LA ESCENA
-    var gameOver:boolean = false;
+    var puedoReinciar:boolean = false;
+    var ConteoDePuntos:number = 0;
+    Puntos.innerHTML = ConteoDePuntos as unknown as string;
+    botonCssReiniciar.style.visibility = 'hidden'; // hace invisible el boton
     
     //scene.debugLayer.show();
 
@@ -161,9 +167,9 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                 if (BABYLON.Tags.GetTags(collidedWith) === "obstaculo") {
                     console.log("colisiono con un obstaculo");
                     
-                    gameOver = true;
+                    puedoReinciar = true;
                     //puedoReiniciar = true;
-                    scene.onGameOver.notifyObservers(gameOver);//cuando llego aqui notifico que es game over
+                    scene.onGameOver.notifyObservers(puedoReinciar);//cuando llego aqui notifico que es game over
                     //console.log("GAMEOVER desde la colisicón del pajaro: " + this.gameOverPublico);
                     pajaroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaroFisico.getObjectCenter());
                 }
@@ -172,7 +178,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             scene.onPointerObservable.add((pointerInfo) => {
                 switch (pointerInfo.type) {
                     case BABYLON.PointerEventTypes.POINTERDOWN:
-                        if (!gameOver)//sino es GameOver
+                        if (!puedoReinciar)//sino es GameOver
                         {
                             pajaroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
                             pajaroFisico.applyImpulse(new BABYLON.Vector3(0, 0.5, 0), pajaroFisico.getObjectCenter());
@@ -195,7 +201,10 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                         trigger:BABYLON.ActionManager.OnIntersectionEnterTrigger,//cuando nu cuerpo entra a esta area
                         parameter:pajaro//cuando el pajaro entra a esta area
                         }, 
-                        function(){
+                        function()
+                        {//funcion para sumar puntos
+                            ConteoDePuntos +=1;
+                            Puntos.innerHTML = ConteoDePuntos as unknown as string;//convierto a string
                             console.log("el pajaro entro al area para los puntos");//muestro este mensaje por consola
                         }
                     )
@@ -208,7 +217,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             //Este es el bucle principal con propiedades físicas tambien esta el bucle común
             scene.onAfterPhysicsObservable.add(() => { //ESTO ES COMO UN UPDATE DE GODOT O UNITY en babylon se usan los OBSERVABLES que son como señales personalizadas
                 //console.log(suelo.position.z)
-                if (!gameOver) {
+                if (!puedoReinciar) {
                     velocidadDesplazamiento = -0.006;
                 }
                 else{
@@ -254,12 +263,28 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
  
     boton.isVisible = false;
     boton.isEnabled = false;
-
+    
+    botonCssReiniciar.isEnabled = false;
+    
 
     scene.onGameOver.addOnce(function(gameOver:boolean) { //observable si es GameOver
-        boton.isVisible = true;
-        boton.isEnabled = true;
+        // // boton.isVisible = true;
+        // // boton.isEnabled = true;
+        setTimeout(() => { //despues que pasaron 300 segundos
+            botonCssReiniciar.style.visibility = 'visible'; // hace invisible el boton  
+        }, 300);
+        
     })
+
+    botonCssReiniciar.onclick = function()
+        {
+            console.log("presione sobre el boton")
+            if(puedoReinciar == true)
+            {
+                CrearEscenaPrincipal(engine,canvas);//VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
+            }
+        };
+        
     boton.onPointerEnterObservable.add(function()//observable si el mouse entro
     {
         boton.scaleX =  1.5;

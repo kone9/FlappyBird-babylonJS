@@ -19,6 +19,41 @@
                 height: 100%;
                 touch-action: none;
             }
+            #puntos {
+                position: absolute;
+                
+                background-color: black;
+                border: 2px solid red;
+                text-align: center;
+                font-size: 32px;
+                color: white;
+                top: 15px;
+                right: 10px;
+                width: 70px;
+                height: 40px;
+                
+            }
+            #boton
+            {
+                position: absolute;
+                background-image: url("./boton.png");
+                background-repeat: no-repeat;
+                width: 208px; /* Definir de acuerdo al ancho de la imagen */
+                height: 116px; /* Definir de acuerdo al alto de la imagen */
+                top: 350px;
+                left: 500px;
+                transition: 0.1s;
+                /*display: block;
+                margin-left: auto;
+                margin-right: auto;*/
+            }
+            #boton:hover
+            {
+                transform: scale(1.5);
+                opacity: 0.9;
+                
+            }    
+                
         </style>
         
         <script src="babylon.js"></script>
@@ -44,9 +79,10 @@
     </head>
 
    <body>
-        <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
-        <script src="test.js"></script>
-        
+       <div id="boton"></div>
+       <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+       <div id="puntos">0</div>
+       <script src="test.js"></script>
         
    </body>
 
