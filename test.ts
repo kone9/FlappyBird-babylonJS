@@ -185,7 +185,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             ////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS//////////
             var Puntajes: BABYLON.Mesh[] = scene.getMeshesByTags("puntos") as BABYLON.Mesh[];//busco el nodo padre que contiene a esas columnas
             Puntajes.forEach(i => { //recorro todos esos objetos
-                i.visibility = 0;//hago invisible las mallas que funcionan para sumar puntos
+                i.visibility = 1;//hago Visible/invisible las mallas que funcionan para sumar puntos
                 //agrego un action manager a cada columna
                 i.actionManager = new BABYLON.ActionManager(scene);//creo el nuevo action manager
                 //register a new action with the marble's actionManager..this will execute code whenever the marble intersects the "killBox"

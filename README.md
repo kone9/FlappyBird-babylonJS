@@ -1,31 +1,26 @@
 # FlappyBird-babylonJS
+![Alt Text](https://media.giphy.com/media/PjP4z5IyOP0GZ9ladE/source.gif)
 
-playgrund babylon test
-https://playground.babylonjs.com/#BVD9GZ#2
 
-Un FlappyBird  desarrollado con babylon.JS para el estudio del motor y sus herramientas comparando con otros engine
+En esta práctica trato de hacer un flappybird con babylon.js para entender cómo funciona el motor y qué herramientas posee para el desarrollo de videojuegos.
+Por ahora no voy a hacer tutoriales sobre babylon.js ya que me parece que Godot sigue siendo una mejor herramienta incluso para web,sin embargo dejo el código fuente por si alguien quiere ver como hice el proyecto
 
-En este proyecto investigo el framwoek para encontrar simulitudes con GameEngine como Godot o unity.
 
-Seguire documentando lo descubierto aqui abajo.
+Test de las mecánicas subidas a itchio,peso final del archivo 2.82MB
+comprimido 726kb 
+https://kone9.itch.io/flappybird-in-b...
 
-Por ahora encontre.
-
-Importación de escenas desde blender3D con materiales y todo.
-
-manejo de físicas y colisiones en modelos importados desde blender3D
-
-bucle update
-
-bucle update con propiedades físicas
-
-uso de etiqutas
-
-detectar colisiones
-
-detectar colisiones usando etiquetas o grupos
-
+Algunas cosas que se ven en este proyecto con babylon.js.
+importar escenas desde blender3D.
 buscar nodos por nombre y luego utilizarlos
+crear cuerpos físicos a los objetos importados
+detectar colisiones por grupos.
+botones y UI.
+input de teclas.
+reiniciar escenas.
+observables personalizados y concepto de observable
+entre muchas cosas.
 
-Seguire escribiendo aqui abajo
+
+
 
