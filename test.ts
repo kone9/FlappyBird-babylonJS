@@ -110,7 +110,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             var helper = scene.createDefaultEnvironment();
             var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
             //var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
-
+            
             //helper.setMainColor(BABYLON.Color3.Teal());     
             //////////////////////////////////////////////////////////////////////////////////////////////////
             scene.onIniciar.notifyObservers(true);//"OBSERVADOR PERSONALIZADO"//notifica verdadero cuando inicio la escena 
@@ -129,6 +129,12 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             var Columnasfisicas: BABYLON.Mesh[] = scene.getMeshesByTags("obstaculo") as BABYLON.Mesh[];//busco todos los objetos que tienen la etiqueta obstaculo son hijos de un nodo vacio que maneja las columnas fíśicas
             Columnasfisicas.forEach(i => { //recorro todos esos objetos ycreo un impostores físicos automaticamente
                 i.physicsImpostor = new BABYLON.PhysicsImpostor(i, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0 }, scene);//creo impostores físicos,la masa se va sumando
+                i.visibility = 0;
+            });
+            
+            //para hacer invisible las columnas
+            var columnasVisibles:BABYLON.Mesh[] = scene.getMeshesByTags("columna") as BABYLON.Mesh[];
+            columnasVisibles.forEach(i => {
                 i.visibility = 0;
             });
 
@@ -174,6 +180,8 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                     pajaroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaroFisico.getObjectCenter());
                 }
             };
+            //pajaro.dispose();//borrar para ver el pájaro
+            pajaroFisico.dispose();//borrar para ver el pájaro
             ///VERIFICAR TECLAS PRESIONADOS USANDO LAS HERRAMIENTAS DE BABYLON
             scene.onPointerObservable.add((pointerInfo) => {
                 switch (pointerInfo.type) {
@@ -191,7 +199,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             ////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS//////////
             var Puntajes: BABYLON.Mesh[] = scene.getMeshesByTags("puntos") as BABYLON.Mesh[];//busco el nodo padre que contiene a esas columnas
             Puntajes.forEach(i => { //recorro todos esos objetos
-                i.visibility = 1;//hago Visible/invisible las mallas que funcionan para sumar puntos
+                i.visibility = 0;//hago Visible/invisible las mallas que funcionan para sumar puntos
                 //agrego un action manager a cada columna
                 i.actionManager = new BABYLON.ActionManager(scene);//creo el nuevo action manager
                 //register a new action with the marble's actionManager..this will execute code whenever the marble intersects the "killBox"
@@ -213,20 +221,44 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             ///////////////////////////////////////////////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////                ////////////////////////////////////////////////////////////////////////////////////////////////
             ///PARA MOVER////////////////PARA MOVER/////////////////////PARA MOVER//////////////////
-            var velocidadDesplazamiento = 0;
+            var velocidadDesplazamiento:number = 0;
+            var dificultad:number = 0.000;
+            function AumentarDificultad() : void
+            {
+                if(!puedoReinciar)
+                {
+                    dificultad -= 0.00001 ;
+                    //console.log(dificultad)
+                }
+            }
+            setInterval(AumentarDificultad,10);
+            
+            // // const Esperar = (milliseconds) => //esto es una función para ejectuar cada cierto tiempo
+            // // {
+            // //     return new Promise(resolve => setTimeout(resolve, milliseconds))
+            // // }
+            // while(true)
+            // {
+            //     dificultad -= 0.00001 ;
+            //     console.log(dificultad)
+            //     Esperar(1000);
+            // }
+                
+        
             //Este es el bucle principal con propiedades físicas tambien esta el bucle común
             scene.onAfterPhysicsObservable.add(() => { //ESTO ES COMO UN UPDATE DE GODOT O UNITY en babylon se usan los OBSERVABLES que son como señales personalizadas
                 //console.log(suelo.position.z)
                 if (!puedoReinciar) {
-                    velocidadDesplazamiento = -0.006;
+                    velocidadDesplazamiento = -0.006 + dificultad;
                 }
                 else{
-                    velocidadDesplazamiento = 0; 
+                    velocidadDesplazamiento = 0;
+                    dificultad = 0; 
                 }
                 /////////////MOVER COLUMNAS/////////////MOVER COLUMNAS/////////////MOVER COLUMNAS/////////////MOVER COLUMNAS
                 columnasPrincipales.forEach(i => {
                     i.position.set(0, i.position.y, i.position.z + velocidadDesplazamiento * scene.getEngine().getDeltaTime());//esto es para cambiar la posición del cuerpo fisico y la malla
-                    if(i.position.z < -30)
+                    if(i.position.z <= -30)
                     {
                         i.position.set(
                             0,
@@ -237,9 +269,11 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                 /////////////MOVER SUELO/////////////MOVER SUELO/////////////MOVER SUELO/////////////MOVER SUELO
                 suelos.forEach(i => {
                     i.position.set(0, i.position.y, i.position.z + velocidadDesplazamiento * scene.getEngine().getDeltaTime());//esto es para cambiar la posición del cuerpo fisico y la malla                       
-                    if(i.position.z < -30)
+                    console.log(i.position.z);
+                    if(i.position.z <= -30)
                     {
-                        i.position.set(0,i.position.y,40);
+                        i.position.set(i.position.x,i.position.y,40);
+                        console.log(i.position.z);
                     }
                 });
             })
@@ -250,22 +284,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     
     ////////INTERFACE//////////INTERFACE///////////INTERFACE////////////////////INTERFACE
      ///CREATE BUTTON
-    var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("Mi Interface UI");
-    var boton = BABYLON.GUI.Button.CreateImageOnlyButton("boton", "./boton.png");//creo un boton usando una iamgen
-    boton.width = "208px"
-    boton.height = "116px";
-    boton.color = "trasparent";
-    boton.cornerRadius = 20;
-    boton.fontSize = 20;
-    boton.thickness = 0;
-    advancedTexture.addControl(boton);
-
- 
-    boton.isVisible = false;
-    boton.isEnabled = false;
-    
-    botonCssReiniciar.isEnabled = false;
-    
+        
 
     scene.onGameOver.addOnce(function(gameOver:boolean) { //observable si es GameOver
         // // boton.isVisible = true;
@@ -277,33 +296,24 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     })
 
     botonCssReiniciar.onclick = function()
+    {
+        console.log("presione sobre el boton")
+        if(puedoReinciar == true)
         {
-            console.log("presione sobre el boton")
-            if(puedoReinciar == true)
-            {
-                CrearEscenaPrincipal(engine,canvas);//VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
-            }
-        };
-        
-    boton.onPointerEnterObservable.add(function()//observable si el mouse entro
-    {
-        boton.scaleX =  1.5;
-        boton.scaleY = 1.5;
-    })
-    boton.onPointerOutObservable.add(function()//observable si el mouse salio
-    {
-        boton.scaleX = 1;
-        boton.scaleY = 1;
-    })
-    boton.onPointerClickObservable.addOnce(function()//observable si presiono el boton
-    {
-        CrearEscenaPrincipal(engine,canvas);//VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
-    })
+            CrearEscenaPrincipal(engine,canvas);//VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
+        }
+    };
+   
     
     
     function numeroAleatorio(min:number, max:number)//función para crear números aleatorios
     {
         return Math.round(Math.random() * (max - min) + min);
+    }
+
+    async function Timer(tiempoEspera : number)
+    {
+        return new Promise(resolve => setTimeout(resolve, tiempoEspera))
     }
         
     return scene;//retorno la escena

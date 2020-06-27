@@ -1,7 +1,7 @@
 Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 ========= Conversion from Blender to Babylon.js =========
 	Scene settings used :
-		Inline textures     :  false
+		Inline textures     :  true
 		Material Type       :  PBR
 		Positions Precision :  4
 		Normals Precision   :  3
@@ -9,7 +9,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		Vert Color Precision:  3
 		Mat Weight Precision:  2
 		Keep Z-up r-handed  :  no
-		Texture directory   :  /home/ariel/Escritorio/archivos para luego borrar varios proyectos/flappy bird babylon/babylonExportBlender/
+			processing env texture environment.env
 	Python World class constructor completed
 	processing begun of camera (ArcRotateCamera):  Camera
 		WARNING: Camera type with mandatory target specified, but no target to track set.  Ignored
@@ -177,16 +177,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  60
-	processing begun of mesh:  columnas7
-		processing begun of material:  Material
-		registered as also a user of material:  Material
-		num positions      :  133
-		num normals        :  133
-		num tangents       :  0
-		num uvs            :  266
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  156
 	processing begun of mesh:  suelo7
 		processing begun of material:  Material
 		processing begun of material:  pajaro
@@ -201,15 +191,16 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  60
-	processing begun of mesh:  columnaFisicoSuperior
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
+	processing begun of mesh:  columnas7
+		processing begun of material:  Material
+		registered as also a user of material:  Material
+		num positions      :  133
+		num normals        :  133
 		num tangents       :  0
-		num uvs            :  58
+		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num indices        :  156
 	processing begun of mesh:  columnaFisicoInferior
 		WARNING: No materials have been assigned: 
 		num positions      :  31
@@ -219,7 +210,16 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.001
+	processing begun of mesh:  columnaFisicoSuperior
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos
 		WARNING: No materials have been assigned: 
 		num positions      :  29
 		num normals        :  29
@@ -237,7 +237,25 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.002
+	processing begun of mesh:  columnaFisicoSuperior.001
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.001
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.002
 		WARNING: No materials have been assigned: 
 		num positions      :  29
 		num normals        :  29
@@ -255,75 +273,12 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.003
+	processing begun of mesh:  columnaFisicoSuperior.002
 		WARNING: No materials have been assigned: 
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
 		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.003
-		WARNING: No materials have been assigned: 
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.004
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.004
-		WARNING: No materials have been assigned: 
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.005
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.005
-		WARNING: No materials have been assigned: 
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.006
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.006
-		WARNING: No materials have been assigned: 
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
@@ -345,70 +300,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.002
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
 	processing begun of mesh:  columnasPrincipal.003
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.004
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.005
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.006
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.001
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.002
 		WARNING: No materials have been assigned: 
 		num positions      :  29
 		num normals        :  29
@@ -426,7 +318,25 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.004
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
 	processing begun of mesh:  puntos.004
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.005
 		WARNING: No materials have been assigned: 
 		num positions      :  29
 		num normals        :  29
@@ -444,6 +354,96 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.006
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.002
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.003
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.004
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.005
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.006
+		WARNING: No materials have been assigned: 
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.003
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.004
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.005
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.006
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
 	processing begun of mesh:  puntos.006
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -453,6 +453,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
+	processing begun of light (DIRECTIONAL):  Sun
+	processing begun of light (POINT):  Point
 ========= Writing of JSON file started =========
 	writing mesh:  columnas
 	writing mesh:  pajaro
@@ -467,36 +469,36 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 	writing mesh:  suelo5
 	writing mesh:  columnas6
 	writing mesh:  suelo6
-	writing mesh:  columnas7
 	writing mesh:  suelo7
-	writing mesh:  columnaFisicoSuperior
+	writing mesh:  columnas7
 	writing mesh:  columnaFisicoInferior
-	writing mesh:  columnaFisicoSuperior.001
+	writing mesh:  columnaFisicoSuperior
+	writing mesh:  puntos
 	writing mesh:  columnaFisicoInferior.001
-	writing mesh:  columnaFisicoSuperior.002
+	writing mesh:  columnaFisicoSuperior.001
+	writing mesh:  puntos.001
+	writing mesh:  columnasPrincipal.002
 	writing mesh:  columnaFisicoInferior.002
-	writing mesh:  columnaFisicoSuperior.003
-	writing mesh:  columnaFisicoInferior.003
-	writing mesh:  columnaFisicoSuperior.004
-	writing mesh:  columnaFisicoInferior.004
-	writing mesh:  columnaFisicoSuperior.005
-	writing mesh:  columnaFisicoInferior.005
-	writing mesh:  columnaFisicoSuperior.006
-	writing mesh:  columnaFisicoInferior.006
+	writing mesh:  columnaFisicoSuperior.002
 	writing mesh:  columnasPrincipal
 	writing mesh:  columnasPrincipal.001
-	writing mesh:  columnasPrincipal.002
 	writing mesh:  columnasPrincipal.003
-	writing mesh:  columnasPrincipal.004
-	writing mesh:  columnasPrincipal.005
-	writing mesh:  columnasPrincipal.006
-	writing mesh:  puntos
-	writing mesh:  puntos.001
-	writing mesh:  puntos.002
 	writing mesh:  puntos.003
+	writing mesh:  columnasPrincipal.004
 	writing mesh:  puntos.004
+	writing mesh:  columnasPrincipal.005
 	writing mesh:  puntos.005
+	writing mesh:  columnasPrincipal.006
+	writing mesh:  puntos.002
+	writing mesh:  columnaFisicoInferior.003
+	writing mesh:  columnaFisicoInferior.004
+	writing mesh:  columnaFisicoInferior.005
+	writing mesh:  columnaFisicoInferior.006
+	writing mesh:  columnaFisicoSuperior.003
+	writing mesh:  columnaFisicoSuperior.004
+	writing mesh:  columnaFisicoSuperior.005
+	writing mesh:  columnaFisicoSuperior.006
 	writing mesh:  puntos.006
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.4934 secs
+elapsed time:  0 min, 0.5504 secs
