@@ -72,7 +72,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  156
-	processing begun of mesh:  suelo
+	processing begun of mesh:  sueloMalla
 		processing begun of material:  Material
 		processing begun of material:  pajaro
 			processing texture verde
@@ -80,48 +80,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 			processing texture amarillo
 				texture type:  diffuseTexture, mapped using: "UVMap"
 		processing begun of multimaterial:  Escenario.Multimaterial#1
-		num positions      :  45
-		num normals        :  45
-		num tangents       :  0
-		num uvs            :  90
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  60
-	processing begun of mesh:  suelo2
-		processing begun of material:  Material
-		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
-		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#2
-		num positions      :  45
-		num normals        :  45
-		num tangents       :  0
-		num uvs            :  90
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  60
-	processing begun of mesh:  suelo3
-		processing begun of material:  Material
-		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
-		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#3
-		num positions      :  45
-		num normals        :  45
-		num tangents       :  0
-		num uvs            :  90
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  60
-	processing begun of mesh:  suelo4
-		processing begun of material:  Material
-		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
-		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#4
 		num positions      :  45
 		num normals        :  45
 		num tangents       :  0
@@ -139,20 +97,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  156
-	processing begun of mesh:  suelo5
-		processing begun of material:  Material
-		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
-		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#5
-		num positions      :  45
-		num normals        :  45
-		num tangents       :  0
-		num uvs            :  90
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  60
 	processing begun of mesh:  columnas6
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -163,34 +107,6 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  156
-	processing begun of mesh:  suelo6
-		processing begun of material:  Material
-		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
-		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#6
-		num positions      :  45
-		num normals        :  45
-		num tangents       :  0
-		num uvs            :  90
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  60
-	processing begun of mesh:  suelo7
-		processing begun of material:  Material
-		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
-		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#7
-		num positions      :  45
-		num normals        :  45
-		num tangents       :  0
-		num uvs            :  90
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  60
 	processing begun of mesh:  columnas7
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -201,8 +117,43 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  156
-	processing begun of mesh:  columnaFisicoInferior
+	processing begun of node:  Empty
+	processing begun of mesh:  EmphtyReposicionar
 		WARNING: No materials have been assigned: 
+		num positions      :  65
+		num normals        :  65
+		num tangents       :  0
+		num uvs            :  130
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  84
+		WARNING: # of 0 area faces found:  6
+	processing begun of mesh:  sueloMalla.001
+		processing begun of material:  Material
+		processing begun of material:  pajaro
+			processing texture verde
+				texture type:  diffuseTexture, mapped using: "UVMap"
+		registered as also a user of material:  pajaro
+		processing begun of multimaterial:  Escenario.Multimaterial#2
+		num positions      :  45
+		num normals        :  45
+		num tangents       :  0
+		num uvs            :  90
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  60
+	processing begun of mesh:  EmphtyReposicionar2
+		WARNING: No materials have been assigned: 
+		num positions      :  65
+		num normals        :  65
+		num tangents       :  0
+		num uvs            :  130
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  84
+		WARNING: # of 0 area faces found:  6
+	processing begun of mesh:  columnaFisicoInferior
+		processing begun of material:  colisionMaterial
 		num positions      :  31
 		num normals        :  31
 		num tangents       :  0
@@ -211,7 +162,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoSuperior
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -229,7 +181,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoInferior.001
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  31
 		num normals        :  31
 		num tangents       :  0
@@ -238,7 +191,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoSuperior.001
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -265,7 +219,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoInferior.002
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  31
 		num normals        :  31
 		num tangents       :  0
@@ -274,7 +229,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoSuperior.002
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -373,7 +329,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoInferior.003
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  31
 		num normals        :  31
 		num tangents       :  0
@@ -382,7 +339,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoInferior.004
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  31
 		num normals        :  31
 		num tangents       :  0
@@ -391,7 +349,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoInferior.005
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  31
 		num normals        :  31
 		num tangents       :  0
@@ -400,7 +359,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoInferior.006
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  31
 		num normals        :  31
 		num tangents       :  0
@@ -409,7 +369,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoSuperior.003
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -418,7 +379,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoSuperior.004
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -427,7 +389,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoSuperior.005
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -436,7 +399,8 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  36
 	processing begun of mesh:  columnaFisicoSuperior.006
-		WARNING: No materials have been assigned: 
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -453,6 +417,87 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
+	processing begun of mesh:  sueloColision
+		processing begun of material:  colisionMaterial
+		processing begun of material:  pajaro
+		registered as also a user of material:  pajaro
+		processing begun of multimaterial:  Escenario.Multimaterial#3
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  sueloColision.001
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  pajaroColision
+		processing begun of material:  colisionMaterial
+		processing begun of material:  pajaro
+		registered as also a user of material:  pajaro
+		processing begun of multimaterial:  Escenario.Multimaterial#4
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  suelo
+		WARNING: No materials have been assigned: 
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  6
+	processing begun of mesh:  suelo2
+		WARNING: No materials have been assigned: 
+		num positions      :  4
+		num normals        :  4
+		num tangents       :  0
+		num uvs            :  8
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  6
+	processing begun of mesh:  suelo.001
+		WARNING: No materials have been assigned: 
+		num positions      :  0
+		num normals        :  0
+		num tangents       :  0
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  0
+	WARNING: mesh, suelo.001, has 0 vertices; ignored
+	processing begun of mesh:  numero1
+		WARNING: No materials have been assigned: 
+		num positions      :  8
+		num normals        :  8
+		num tangents       :  0
+		num uvs            :  16
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  18
+	processing begun of mesh:  numero2
+		WARNING: No materials have been assigned: 
+		num positions      :  114
+		num normals        :  114
+		num tangents       :  0
+		num uvs            :  228
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  180
+		WARNING: # of 0 area faces found:  32
 	processing begun of light (DIRECTIONAL):  Sun
 	processing begun of light (POINT):  Point
 ========= Writing of JSON file started =========
@@ -461,16 +506,13 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 	writing mesh:  columnas2
 	writing mesh:  columnas3
 	writing mesh:  columnas4
-	writing mesh:  suelo
-	writing mesh:  suelo2
-	writing mesh:  suelo3
-	writing mesh:  suelo4
+	writing mesh:  sueloMalla
 	writing mesh:  columnas5
-	writing mesh:  suelo5
 	writing mesh:  columnas6
-	writing mesh:  suelo6
-	writing mesh:  suelo7
 	writing mesh:  columnas7
+	writing mesh:  EmphtyReposicionar
+	writing mesh:  sueloMalla.001
+	writing mesh:  EmphtyReposicionar2
 	writing mesh:  columnaFisicoInferior
 	writing mesh:  columnaFisicoSuperior
 	writing mesh:  puntos
@@ -499,6 +541,13 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 	writing mesh:  columnaFisicoSuperior.005
 	writing mesh:  columnaFisicoSuperior.006
 	writing mesh:  puntos.006
+	writing mesh:  sueloColision
+	writing mesh:  sueloColision.001
+	writing mesh:  pajaroColision
+	writing mesh:  suelo
+	writing mesh:  suelo2
+	writing mesh:  numero1
+	writing mesh:  numero2
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.5504 secs
+elapsed time:  0 min, 0.3299 secs
