@@ -119,11 +119,11 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num indices        :  156
 	processing begun of node:  Empty
 	processing begun of mesh:  EmphtyReposicionar
-		WARNING: No materials have been assigned: 
-		num positions      :  65
-		num normals        :  65
+		processing begun of material:  naranja
+		num positions      :  66
+		num normals        :  66
 		num tangents       :  0
-		num uvs            :  130
+		num uvs            :  132
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  84
@@ -143,11 +143,12 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num indices        :  60
 	processing begun of mesh:  EmphtyReposicionar2
-		WARNING: No materials have been assigned: 
-		num positions      :  65
-		num normals        :  65
+		processing begun of material:  naranja
+		registered as also a user of material:  naranja
+		num positions      :  66
+		num normals        :  66
 		num tangents       :  0
-		num uvs            :  130
+		num uvs            :  132
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  84
@@ -180,235 +181,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.001
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.001
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.001
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.002
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.002
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.002
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
 	processing begun of mesh:  columnasPrincipal
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.001
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.003
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.003
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.004
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.004
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.005
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.005
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnasPrincipal.006
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.002
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.003
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.004
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.005
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoInferior.006
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  31
-		num normals        :  31
-		num tangents       :  0
-		num uvs            :  62
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.003
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.004
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.005
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  columnaFisicoSuperior.006
-		processing begun of material:  colisionMaterial
-		registered as also a user of material:  colisionMaterial
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  36
-	processing begun of mesh:  puntos.006
 		WARNING: No materials have been assigned: 
 		num positions      :  29
 		num normals        :  29
@@ -451,6 +224,374 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.008
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.007
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.008
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.007
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.007
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.007
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.009
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.009
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.001
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.001
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.001
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.001
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.002
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.002
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.003
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.003
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.002
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.002
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.010
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.010
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.004
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.004
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.003
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.003
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.011
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.011
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.005
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.005
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.004
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.004
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.012
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.012
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.006
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.006
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  puntos.005
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnasPrincipal.005
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoSuperior.013
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+	processing begun of mesh:  columnaFisicoInferior.013
+		processing begun of material:  colisionMaterial
+		registered as also a user of material:  colisionMaterial
+		num positions      :  31
+		num normals        :  31
+		num tangents       :  0
+		num uvs            :  62
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
 	processing begun of mesh:  suelo
 		WARNING: No materials have been assigned: 
 		num positions      :  4
@@ -480,24 +621,25 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num indices        :  0
 	WARNING: mesh, suelo.001, has 0 vertices; ignored
 	processing begun of mesh:  numero1
-		WARNING: No materials have been assigned: 
-		num positions      :  8
-		num normals        :  8
+		processing begun of material:  naranja
+		registered as also a user of material:  naranja
+		num positions      :  127
+		num normals        :  127
 		num tangents       :  0
-		num uvs            :  16
+		num uvs            :  254
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  18
+		num indices        :  156
 	processing begun of mesh:  numero2
-		WARNING: No materials have been assigned: 
-		num positions      :  114
-		num normals        :  114
+		processing begun of material:  naranja
+		registered as also a user of material:  naranja
+		num positions      :  232
+		num normals        :  232
 		num tangents       :  0
-		num uvs            :  228
+		num uvs            :  464
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  180
-		WARNING: # of 0 area faces found:  32
+		num indices        :  324
 	processing begun of light (DIRECTIONAL):  Sun
 	processing begun of light (POINT):  Point
 ========= Writing of JSON file started =========
@@ -516,38 +658,52 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 	writing mesh:  columnaFisicoInferior
 	writing mesh:  columnaFisicoSuperior
 	writing mesh:  puntos
-	writing mesh:  columnaFisicoInferior.001
-	writing mesh:  columnaFisicoSuperior.001
-	writing mesh:  puntos.001
-	writing mesh:  columnasPrincipal.002
-	writing mesh:  columnaFisicoInferior.002
-	writing mesh:  columnaFisicoSuperior.002
 	writing mesh:  columnasPrincipal
-	writing mesh:  columnasPrincipal.001
-	writing mesh:  columnasPrincipal.003
-	writing mesh:  puntos.003
-	writing mesh:  columnasPrincipal.004
-	writing mesh:  puntos.004
-	writing mesh:  columnasPrincipal.005
-	writing mesh:  puntos.005
-	writing mesh:  columnasPrincipal.006
-	writing mesh:  puntos.002
-	writing mesh:  columnaFisicoInferior.003
-	writing mesh:  columnaFisicoInferior.004
-	writing mesh:  columnaFisicoInferior.005
-	writing mesh:  columnaFisicoInferior.006
-	writing mesh:  columnaFisicoSuperior.003
-	writing mesh:  columnaFisicoSuperior.004
-	writing mesh:  columnaFisicoSuperior.005
-	writing mesh:  columnaFisicoSuperior.006
-	writing mesh:  puntos.006
 	writing mesh:  sueloColision
 	writing mesh:  sueloColision.001
 	writing mesh:  pajaroColision
+	writing mesh:  columnaFisicoSuperior.008
+	writing mesh:  columnaFisicoInferior.007
+	writing mesh:  columnaFisicoInferior.008
+	writing mesh:  columnaFisicoSuperior.007
+	writing mesh:  puntos.007
+	writing mesh:  columnasPrincipal.007
+	writing mesh:  columnaFisicoSuperior.009
+	writing mesh:  columnaFisicoInferior.009
+	writing mesh:  columnaFisicoInferior.001
+	writing mesh:  columnaFisicoSuperior.001
+	writing mesh:  puntos.001
+	writing mesh:  columnasPrincipal.001
+	writing mesh:  columnaFisicoSuperior.002
+	writing mesh:  columnaFisicoInferior.002
+	writing mesh:  columnaFisicoInferior.003
+	writing mesh:  columnaFisicoSuperior.003
+	writing mesh:  puntos.002
+	writing mesh:  columnasPrincipal.002
+	writing mesh:  columnaFisicoSuperior.010
+	writing mesh:  columnaFisicoInferior.010
+	writing mesh:  columnaFisicoInferior.004
+	writing mesh:  columnaFisicoSuperior.004
+	writing mesh:  puntos.003
+	writing mesh:  columnasPrincipal.003
+	writing mesh:  columnaFisicoSuperior.011
+	writing mesh:  columnaFisicoInferior.011
+	writing mesh:  columnaFisicoInferior.005
+	writing mesh:  columnaFisicoSuperior.005
+	writing mesh:  puntos.004
+	writing mesh:  columnasPrincipal.004
+	writing mesh:  columnaFisicoSuperior.012
+	writing mesh:  columnaFisicoInferior.012
+	writing mesh:  columnaFisicoInferior.006
+	writing mesh:  columnaFisicoSuperior.006
+	writing mesh:  puntos.005
+	writing mesh:  columnasPrincipal.005
+	writing mesh:  columnaFisicoSuperior.013
+	writing mesh:  columnaFisicoInferior.013
 	writing mesh:  suelo
 	writing mesh:  suelo2
 	writing mesh:  numero1
 	writing mesh:  numero2
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.3299 secs
+elapsed time:  0 min, 0.4171 secs

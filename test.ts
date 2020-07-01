@@ -74,14 +74,17 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     { 
     /////////VARIABLES GLOBALES PARA EL CONTROL DEL JUEGO Y DEPURACIÓN////////VARIABLES GLOBALES PARA EL CONTROL DEL JUEGO Y DEREPURACIÓN
     let visibleMaestros:number = 0;//HACE VISIBLE INVISIBLE LOS MAESTROS 0 invisible 1 visible
+    let visibleEmphtyReposicionar:number = 1;//PARA HACER VISIBLES OBJETOS VACIOS QUE MUESTRAN UNA POSICIÓNES
     let visibleTodasLasColisiones:number = 0;//para hacer visibles invisibles las colisiones 0 invisible 1 visible
     let visibleColumnas:number = 1;//HACE INVISIBLE LAS COLUMNAS
     let desactivarColisionColumnas:boolean = false;//DESACTIVO COLISION COLUMNAS
     let visibleSuelo:number = 1;//HACE VISIBLE INVISIBLE LOS suelos 0 invisible 1 visible
     let desactivarColisionSuelo:boolean = false;//DESACTIVAR COLISION DEL SUELO
-    let velocidadMovimientoJuego:number = -0.003;//para hacer que las columnas se muevan más rápido
+    let velocidadMovimientoJuego:number = -0.1;//para hacer que las columnas se muevan más rápido
+    let desactivarDificultad:boolean = false;
     let desactivarFisicasPajaro:boolean = false;//PARA DESACTIVAR LAS Físicas del pájaro
     let camaraSigueJugador:boolean = false;//si la camara sigue al jugador
+    let camaraSigueReposicionar:boolean = false;//si la camara sigue al objeto reposicionar
     let ActivarEditor:boolean = false;//SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
     ////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -283,15 +286,19 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             ///PARA MOVER////////////////PARA MOVER/////////////////////PARA MOVER//////////////////
             var velocidadDesplazamiento:number = 0;
             var dificultad:number = 0.000;
-            // function AumentarDificultad() : void
-            // {
-            //     if(!puedoReinciar)
-            //     {
-            //         dificultad -= 0.00001 ;
-            //         //console.log(dificultad)
-            //     }
-            // }
-            // setInterval(AumentarDificultad,10);
+            function AumentarDificultad() : void
+            {
+                if(!puedoReinciar)
+                {
+                    dificultad -= 0.00001 ;
+                    //console.log(dificultad)
+                }
+            }
+            if(!desactivarDificultad)//sino desactive la dificultad
+            {
+                setInterval(AumentarDificultad,100);
+            }
+
             
             // // const Esperar = (milliseconds) => //esto es una función para ejectuar cada cierto tiempo
             // // {
@@ -303,14 +310,22 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             //     console.log(dificultad)
             //     Esperar(1000);
             // }
-            (scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh).visibility = 1;
-            (scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).visibility = 1;     
-        
+            ////EmphtyReposicionar            ////EmphtyReposicionar            ////EmphtyReposicionar
+            let EmphtyReposicionar = (scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh);
+            let EmphtyReposicionar2 = (scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh);
+            EmphtyReposicionar.visibility = visibleEmphtyReposicionar;
+            EmphtyReposicionar2.visibility = visibleEmphtyReposicionar;     
+            
+            if(camaraSigueReposicionar)
+            {
+                camera.setTarget(scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh,false,false);
+            }
+                
             //Este es el bucle principal con propiedades físicas tambien esta el bucle común
             scene.onAfterPhysicsObservable.add(() => { //ESTO ES COMO UN UPDATE DE GODOT O UNITY en babylon se usan los OBSERVABLES que son como señales personalizadas
                 //console.log(suelo.position.z)
                 if (!puedoReinciar) {
-                    velocidadDesplazamiento = velocidadMovimientoJuego + dificultad;
+                    velocidadDesplazamiento = velocidadMovimientoJuego + dificultad * scene.getEngine().getDeltaTime();
                 }
                 else{
                     velocidadDesplazamiento = 0;
@@ -318,22 +333,30 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                 }
                 /////////////MOVER COLUMNAS/////////////MOVER COLUMNAS/////////////MOVER COLUMNAS/////////////MOVER COLUMNAS
                 columnasPrincipales.forEach(i => {
-                    i.position.set(0, i.position.y, i.position.z + velocidadDesplazamiento * scene.getEngine().getDeltaTime());//esto es para cambiar la posición del cuerpo fisico y la malla
-                    if(i.position.z <= -30)
+                    i.setAbsolutePosition(new BABYLON.Vector3(
+                        i.getAbsolutePosition().x,
+                        i.getAbsolutePosition().y,
+                        i.getAbsolutePosition().z + velocidadDesplazamiento)
+                    );
+                    if(i.position.z <= -30)//si la posicion es menos 30
                     {
                         i.position.set(
                             0,
                             numeroAleatorio(4,10),
-                            40);
+                            40 + velocidadDesplazamiento);//la posicion sera 40,siempre sumo la velocidad de desplazamiento para que las columnas no queden desplazadas
                     }
                 });
                 /////////////MOVER SUELO/////////////MOVER SUELO/////////////MOVER SUELO/////////////MOVER SUELO
-
-                suelos.forEach(i => {
+                suelos.forEach(i => 
+                {
                     //i.position.set(0, i.position.y, i.position.z + velocidadDesplazamiento * scene.getEngine().getDeltaTime());//esto es para cambiar la posición del cuerpo fisico y la malla                       
-                    i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x,i.getAbsolutePosition().y,i.getAbsolutePosition().z  + velocidadDesplazamiento *scene.getEngine().getDeltaTime()));
-                    
-                    if(i.getAbsolutePosition().z <= -60)
+     
+                    i.setAbsolutePosition(new BABYLON.Vector3(
+                        i.getAbsolutePosition().x,
+                        i.getAbsolutePosition().y,
+                        i.getAbsolutePosition().z + velocidadDesplazamiento)
+                    );
+                    if(i.getAbsolutePivotPoint().z <= -60)
                     {
                         //i.position.set(i.position.x,i.position.y,(40));
                         if(i.name == "suelo")
@@ -341,46 +364,20 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                             i.setAbsolutePosition(new BABYLON.Vector3(
                                 i.getAbsolutePosition().x,
                                 i.getAbsolutePosition().y,
-                                (scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePosition().z-0.2));
-                            //console.log((scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePivotPoint().z);
-                            console.log("esta reposicionando suelo 1");
+                                EmphtyReposicionar2.getAbsolutePivotPoint().z  + velocidadDesplazamiento));//hay que sumarle la velocidad de desplazamieto para que los suelos queden pegados
+                            //console.log(EmphtyReposicionar.getAbsolutePosition().z + velocidadDesplazamiento);
                         }
                         if(i.name == "suelo2")
                         {
                             i.setAbsolutePosition(new BABYLON.Vector3(
-                                i.getAbsolutePosition().x
-                                ,i.getAbsolutePosition().y,
-                                (scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh).getAbsolutePosition().z-0.2));
-                            console.log("esta reposicionando suelo 2");
+                                i.getAbsolutePosition().x,
+                                i.getAbsolutePosition().y,
+                                EmphtyReposicionar.getAbsolutePivotPoint().z  + velocidadDesplazamiento));//hay que sumarle la velocidad de desplazamieto para que los suelos queden pegados
+                            //console.log( EmphtyReposicionar.getAbsolutePivotPoint().z + velocidadDesplazamiento);
                         }
                     }
-                    // //console.log(i.position.z);
-                    // // if(i.position.z <= -60)
-                    // // {
-                        
-                    // //     //i.position.set(i.position.x,i.position.y,(40));
-                    // //     if(i.name == "suelo")
-                    // //     {
-                    // //         i.position.set(
-                    // //             i.position.x,
-                    // //             i.position.y,
-                    // //             (scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePivotPoint().z);
-                    // //         //console.log((scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePivotPoint().z);
-                    // //     }
-                    // //     if(i.name == "suelo2")
-                    // //     {
-                    // //         i.position.set(
-                    // //             i.position.x
-                    // //             ,i.position.y,
-                    // //             (scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh).getAbsolutePivotPoint().z);
-                    // //         //console.log((scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh).getAbsolutePivotPoint().z);
-                    // //     }
-                    // // }
                 });
-            })
-            ///////////////////////////////////////////////////////////////////
-            /////////////////Crear números aleatorios/////////////////////////
-            
+            });
         });
     
     ////////INTERFACE//////////INTERFACE///////////INTERFACE////////////////////INTERFACE
@@ -626,8 +623,8 @@ function CrearMenu(engine:BABYLON.Engine,canvas:HTMLCanvasElement):BABYLON.Scene
 
 
 //NewScene();
-CrearMenu(engine,canvas);
-// CrearEscenaPrincipal(engine,canvas);//creo la escena
+//CrearMenu(engine,canvas);
+CrearEscenaPrincipal(engine,canvas);//creo la escena
 
 //principal renderLoop
 engine.runRenderLoop(function ()
@@ -636,7 +633,31 @@ engine.runRenderLoop(function ()
 });
 
 
-
+// // // suelos.forEach(i => {
+// // //     //i.position.set(0, i.position.y, i.position.z + velocidadDesplazamiento * scene.getEngine().getDeltaTime());//esto es para cambiar la posición del cuerpo fisico y la malla                       
+// // //     i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x,i.getAbsolutePosition().y,i.getAbsolutePosition().z  + velocidadDesplazamiento *scene.getEngine().getDeltaTime()));
+    
+// // //     if(i.getAbsolutePosition().z <= -60)
+// // //     {
+// // //         //i.position.set(i.position.x,i.position.y,(40));
+// // //         if(i.name == "suelo")
+// // //         {
+// // //             i.setAbsolutePosition(new BABYLON.Vector3(
+// // //                 i.getAbsolutePosition().x,
+// // //                 i.getAbsolutePosition().y,
+// // //                 (scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePosition().z-0.2));
+// // //             //console.log((scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePivotPoint().z);
+// // //             console.log("esta reposicionando suelo 1");
+// // //         }
+// // //         if(i.name == "suelo2")
+// // //         {
+// // //             i.setAbsolutePosition(new BABYLON.Vector3(
+// // //                 i.getAbsolutePosition().x
+// // //                 ,i.getAbsolutePosition().y,
+// // //                 (scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh).getAbsolutePosition().z-0.2));
+// // //             console.log("esta reposicionando suelo 2");
+// // //         }
+// // //     }
 
 
 
