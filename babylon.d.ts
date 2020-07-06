@@ -42060,6 +42060,9 @@ declare module BABYLON {
      * @see http://doc.babylonjs.com/how_to/load_from_any_file_type
      */
     export class SceneLoader {
+        static Asyncend(arg0: string, arg1: string, scene: Scene, arg3: (scene: Scene) => void) {
+            throw new Error("Method not implemented.");
+        }
         /**
          * No logging while loading
          */

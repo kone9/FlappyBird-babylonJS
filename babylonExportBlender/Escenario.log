@@ -1,4 +1,4 @@
-Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
+Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 ========= Conversion from Blender to Babylon.js =========
 	Scene settings used :
 		Inline textures     :  true
@@ -9,10 +9,9 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		Vert Color Precision:  3
 		Mat Weight Precision:  2
 		Keep Z-up r-handed  :  no
-			processing env texture environment.env
+			processing env texture lysGenerated_afternoon.env
 	Python World class constructor completed
-	processing begun of camera (ArcRotateCamera):  Camera
-		WARNING: Camera type with mandatory target specified, but no target to track set.  Ignored
+	processing begun of camera (UniversalCamera):  CameraBlender
 	processing begun of mesh:  columnas
 		processing begun of material:  Material
 			processing texture verde
@@ -23,7 +22,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of mesh:  pajaro
 		processing begun of material:  pajaro
 		processing begun of material:  blanco
@@ -41,7 +40,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  302
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  444
+		num triangles      :  148
 	processing begun of mesh:  columnas2
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -51,7 +50,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of mesh:  columnas3
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -61,7 +60,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of mesh:  columnas4
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -71,14 +70,12 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of mesh:  sueloMalla
 		processing begun of material:  Material
 		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
-			processing texture amarillo
-				texture type:  diffuseTexture, mapped using: "UVMap"
+		registered as also a user of material:  Material
+		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#1
 		num positions      :  45
 		num normals        :  45
@@ -86,7 +83,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  90
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  60
+		num triangles      :  20
 	processing begun of mesh:  columnas5
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -96,7 +93,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of mesh:  columnas6
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -106,7 +103,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of mesh:  columnas7
 		processing begun of material:  Material
 		registered as also a user of material:  Material
@@ -116,7 +113,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  266
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of node:  Empty
 	processing begun of mesh:  EmphtyReposicionar
 		processing begun of material:  naranja
@@ -126,13 +123,12 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  132
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  84
+		num triangles      :  28
 		WARNING: # of 0 area faces found:  6
 	processing begun of mesh:  sueloMalla.001
 		processing begun of material:  Material
 		processing begun of material:  pajaro
-			processing texture verde
-				texture type:  diffuseTexture, mapped using: "UVMap"
+		registered as also a user of material:  Material
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#2
 		num positions      :  45
@@ -141,7 +137,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  90
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  60
+		num triangles      :  20
 	processing begun of mesh:  EmphtyReposicionar2
 		processing begun of material:  naranja
 		registered as also a user of material:  naranja
@@ -151,7 +147,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  132
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  84
+		num triangles      :  28
 		WARNING: # of 0 area faces found:  6
 	processing begun of mesh:  columnaFisicoInferior
 		processing begun of material:  colisionMaterial
@@ -161,7 +157,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -171,7 +167,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  puntos
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -180,7 +176,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnasPrincipal
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -189,10 +185,11 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  sueloColision
 		processing begun of material:  colisionMaterial
 		processing begun of material:  pajaro
+		registered as also a user of material:  colisionMaterial
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#3
 		num positions      :  29
@@ -201,7 +198,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  sueloColision.001
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -211,10 +208,11 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  pajaroColision
 		processing begun of material:  colisionMaterial
 		processing begun of material:  pajaro
+		registered as also a user of material:  colisionMaterial
 		registered as also a user of material:  pajaro
 		processing begun of multimaterial:  Escenario.Multimaterial#4
 		num positions      :  29
@@ -223,7 +221,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.008
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -233,7 +231,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.007
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -243,7 +241,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.008
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -253,7 +251,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.007
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -263,7 +261,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  puntos.007
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -272,7 +270,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnasPrincipal.007
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -281,7 +279,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.009
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -291,7 +289,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.009
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -301,7 +299,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.001
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -311,7 +309,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.001
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -321,7 +319,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  puntos.001
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -330,7 +328,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnasPrincipal.001
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -339,7 +337,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.002
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -349,7 +347,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.002
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -359,7 +357,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.003
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -369,7 +367,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.003
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -379,7 +377,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  puntos.002
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -388,7 +386,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnasPrincipal.002
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -397,7 +395,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.010
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -407,7 +405,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.010
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -417,7 +415,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.004
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -427,7 +425,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.004
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -437,7 +435,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  puntos.003
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -446,7 +444,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnasPrincipal.003
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -455,7 +453,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.011
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -465,7 +463,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.011
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -475,7 +473,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.005
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -485,7 +483,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.005
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -495,7 +493,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  puntos.004
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -504,7 +502,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnasPrincipal.004
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -513,7 +511,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.012
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -523,7 +521,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.012
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -533,7 +531,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.006
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -543,7 +541,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.006
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -553,7 +551,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  puntos.005
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -562,7 +560,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnasPrincipal.005
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -571,7 +569,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoSuperior.013
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -581,7 +579,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  58
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  columnaFisicoInferior.013
 		processing begun of material:  colisionMaterial
 		registered as also a user of material:  colisionMaterial
@@ -591,7 +589,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  62
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  36
+		num triangles      :  12
 	processing begun of mesh:  suelo
 		WARNING: No materials have been assigned: 
 		num positions      :  4
@@ -600,7 +598,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  8
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  6
+		num triangles      :  2
 	processing begun of mesh:  suelo2
 		WARNING: No materials have been assigned: 
 		num positions      :  4
@@ -609,7 +607,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  8
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  6
+		num triangles      :  2
 	processing begun of mesh:  suelo.001
 		WARNING: No materials have been assigned: 
 		num positions      :  0
@@ -618,7 +616,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  0
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  0
+		num triangles      :  0
 	WARNING: mesh, suelo.001, has 0 vertices; ignored
 	processing begun of mesh:  numero1
 		processing begun of material:  naranja
@@ -629,7 +627,7 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  254
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  156
+		num triangles      :  52
 	processing begun of mesh:  numero2
 		processing begun of material:  naranja
 		registered as also a user of material:  naranja
@@ -639,8 +637,241 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 		num uvs            :  464
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  324
-	processing begun of light (DIRECTIONAL):  Sun
+		num triangles      :  108
+	processing begun of mesh:  Cube
+		processing begun of material:  verdePasto
+		num positions      :  190
+		num normals        :  190
+		num tangents       :  0
+		num uvs            :  380
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  144
+	processing begun of mesh:  Cube.001
+		processing begun of material:  verdePasto
+		registered as also a user of material:  verdePasto
+		num positions      :  210
+		num normals        :  210
+		num tangents       :  0
+		num uvs            :  420
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  160
+	processing begun of mesh:  Cube.002
+		processing begun of material:  verdePasto
+		registered as also a user of material:  verdePasto
+		num positions      :  190
+		num normals        :  190
+		num tangents       :  0
+		num uvs            :  380
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  144
+	processing begun of mesh:  Cube.005
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#5
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.003
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#6
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.004
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#7
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.006
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#8
+		num positions      :  648
+		num normals        :  648
+		num tangents       :  0
+		num uvs            :  1296
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  400
+	processing begun of mesh:  Cube.007
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#9
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.008
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#10
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.009
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#11
+		num positions      :  577
+		num normals        :  577
+		num tangents       :  0
+		num uvs            :  1154
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.010
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#12
+		num positions      :  577
+		num normals        :  577
+		num tangents       :  0
+		num uvs            :  1154
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.011
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#13
+		num positions      :  570
+		num normals        :  570
+		num tangents       :  0
+		num uvs            :  1140
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Plane
+		processing begun of material:  nuves
+		num positions      :  75
+		num normals        :  75
+		num tangents       :  0
+		num uvs            :  150
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  96
+	processing begun of mesh:  Cube.012
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#14
+		num positions      :  648
+		num normals        :  648
+		num tangents       :  0
+		num uvs            :  1296
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  400
+	processing begun of mesh:  Cube.013
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#15
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.014
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#16
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.015
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#17
+		num positions      :  577
+		num normals        :  577
+		num tangents       :  0
+		num uvs            :  1154
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.016
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#18
+		num positions      :  577
+		num normals        :  577
+		num tangents       :  0
+		num uvs            :  1154
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.017
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#19
+		num positions      :  570
+		num normals        :  570
+		num tangents       :  0
+		num uvs            :  1140
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of node:  fondos
+	processing begun of light (DIRECTIONAL):  SunDireccionalBLender
+	processing begun of shadows for light:  SunDireccionalBLender
 	processing begun of light (POINT):  Point
 ========= Writing of JSON file started =========
 	writing mesh:  columnas
@@ -704,6 +935,25 @@ Exporter version: 6.3.1, Blender version: 2.82 (sub 7)
 	writing mesh:  suelo2
 	writing mesh:  numero1
 	writing mesh:  numero2
+	writing mesh:  Cube
+	writing mesh:  Cube.001
+	writing mesh:  Cube.002
+	writing mesh:  Cube.005
+	writing mesh:  Cube.003
+	writing mesh:  Cube.004
+	writing mesh:  Cube.006
+	writing mesh:  Cube.007
+	writing mesh:  Cube.008
+	writing mesh:  Cube.009
+	writing mesh:  Cube.010
+	writing mesh:  Cube.011
+	writing mesh:  Plane
+	writing mesh:  Cube.012
+	writing mesh:  Cube.013
+	writing mesh:  Cube.014
+	writing mesh:  Cube.015
+	writing mesh:  Cube.016
+	writing mesh:  Cube.017
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.4171 secs
+elapsed time:  0 min, 1.5988 secs

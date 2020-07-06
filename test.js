@@ -43,6 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+//////////////Esta clase no la uso es de ejemplo para tener una idea de como usar clases////////////////////////
 var Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
  = /** @class */ (function () {
     function Pajaro(pajaroMesh) {
@@ -96,6 +97,7 @@ var Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON
     });
     return Pajaro;
 }());
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////aqui empieza la aplicación/////////
 var canvas = document.getElementById("renderCanvas"); //referencia al html con la etiqueta renderCanvas
 var engine = new BABYLON.Engine(canvas, true); //creo el motor
@@ -107,19 +109,24 @@ window.addEventListener("resize", function () {
 var scene; //Creo la escena afuera para poder reiniciar
 function CrearEscenaPrincipal(engine, canvas) {
     /////////VARIABLES GLOBALES PARA EL CONTROL DEL JUEGO Y DEPURACIÓN////////VARIABLES GLOBALES PARA EL CONTROL DEL JUEGO Y DEREPURACIÓN
+    //OBJETOS DE LA ESCENA
     var visibleMaestros = 0; //HACE VISIBLE INVISIBLE LOS MAESTROS 0 invisible 1 visible
-    var visibleEmphtyReposicionar = 1; //PARA HACER VISIBLES OBJETOS VACIOS QUE MUESTRAN UNA POSICIÓNES
+    var visibleEmphtyReposicionar = 0; //PARA HACER VISIBLES OBJETOS VACIOS QUE MUESTRAN UNA POSICIÓNES
     var visibleTodasLasColisiones = 0; //para hacer visibles invisibles las colisiones 0 invisible 1 visible
     var visibleColumnas = 1; //HACE INVISIBLE LAS COLUMNAS
     var desactivarColisionColumnas = false; //DESACTIVO COLISION COLUMNAS
     var visibleSuelo = 1; //HACE VISIBLE INVISIBLE LOS suelos 0 invisible 1 visible
     var desactivarColisionSuelo = false; //DESACTIVAR COLISION DEL SUELO
-    var velocidadMovimientoJuego = -0.1; //para hacer que las columnas se muevan más rápido
-    var desactivarDificultad = false;
     var desactivarFisicasPajaro = false; //PARA DESACTIVAR LAS Físicas del pájaro
+    //DIFICULTAD
+    var velocidadMovimientoJuego = -0.1; //para hacer que las columnas se muevan más rápido esto es instantaneo
+    var desactivarDificultad = false; //Relacionado con el timer
+    var dificultadGeneral = 1.0; //Dificultad general de juego mayor numero más rápido aumenta la velocidad puede ser un número flotante
+    var tiempoAumentarDificiltad = 1000; //cada ves que pasa este tiempo en milisegundos aumenta la dificultad se usa con deficultadGeneral
+    //CAMARA Y EDITOR
     var camaraSigueJugador = false; //si la camara sigue al jugador
     var camaraSigueReposicionar = false; //si la camara sigue al objeto reposicionar
-    var ActivarEditor = false; //SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
+    var ActivarEditor = true; //SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
     ////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////COMIENZA EL JUEGO/////////////////////////////////////////////////
@@ -144,24 +151,30 @@ function CrearEscenaPrincipal(engine, canvas) {
     camera.alpha = 0;
     camera.radius = 0.700;
     camera.panningSensibility = 5000;
+    // var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(20, 10, 0), scene);
+    //camera.rotation = new BABYLON.Vector3(0, 110, 0);
     camera.attachControl(canvas, true);
     // Add lights to the scene
     var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
     var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
-    //var light3 = new BABYLON.DirectionalLight("light3", new BABYLON.Vector3(0, 1, 0), scene);
-    light1.intensity = 1.5;
+    var light3 = new BABYLON.DirectionalLight("light3", new BABYLON.Vector3(0, 1, 0), scene);
+    light1.intensity = 5;
+    //light3.intensity = 5;
+    light3.setDirectionToTarget(new BABYLON.Vector3(0, 90, 0));
     //en babylon las escenas se cargan asincronicamente por lo tanto para que funcionen
     //hay que manejar los modelos desde el sceneLoader,esto puede traer
     //muchos problemas,pero tendría que ser posible solucionarlo
     //por ahora de esta forma funciona,estudiar la asincronía de javascript
-    BABYLON.SceneLoader.ImportMesh("", "./babylonExportBlender/", "Escenario.babylon", scene, 
+    BABYLON.SceneLoaderFlags.ShowLoadingScreen = false; //para no ver las barras de cargas cuando importo las mallas desde Blender3D
+    BABYLON.SceneLoader.Append("./babylonExportBlender/", "Escenario.babylon", scene, 
     //BABYLON.SceneLoader.ImportMesh("","/./","Gltf/Escenario.glb",scene,
-    function (newMeshes) {
+    function (scene) {
         //enviroment creado rapidamente
-        var helper = scene.createDefaultEnvironment();
-        var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
+        // var helper = scene.createDefaultEnvironment();
+        // helper.setMainColor(new BABYLON.Color3(0.26,0.45,0.9));     
+        //var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
         //var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
-        //helper.setMainColor(BABYLON.Color3.Teal());     
+        scene.getNodeByName("CameraBlender").fov = 0.40; //cambia el Field of view de la camara importada desde blender en este caso 0.30 representa 30 grados.
         //////////////////////////////////////////////////////////////////////////////////////////////////
         scene.onIniciar.notifyObservers(true); //"OBSERVADOR PERSONALIZADO"//notifica verdadero cuando inicio la escena 
         /////SUELOS//////////////// SUELOS ////////////////// SUELOS //////
@@ -212,9 +225,9 @@ function CrearEscenaPrincipal(engine, canvas) {
         });
         /////////////////////////////////////////////////////////////////////////////////////////////////
         //VER COLISIONES FÏSICAS DE LOS OBJETOS///////////////////VER COLISIONES FÏSICAS DE LOS OBJETOS
-        var physicsViewer = new BABYLON.Debug.PhysicsViewer(scene);
-        var physicsEngine = scene.getPhysicsEngine();
-        var impostores = physicsEngine.getImpostors();
+        // const physicsViewer: BABYLON.Debug.PhysicsViewer = new BABYLON.Debug.PhysicsViewer(scene);
+        // const physicsEngine: BABYLON.IPhysicsEngine = scene.getPhysicsEngine()
+        // var impostores: BABYLON.PhysicsImpostor[] = physicsEngine.getImpostors();
         // console.log(impostores.length);
         // impostores.forEach(i => {
         //     physicsViewer.showImpostor(i);
@@ -234,7 +247,7 @@ function CrearEscenaPrincipal(engine, canvas) {
             //console.log(BABYLON.Tags.GetTags(collidedWith,"obstaculo"));
             //importantisimo detectar colisiones usando "Tags" serian grupos en godot
             if (BABYLON.Tags.GetTags(collidedWith) === "obstaculo") {
-                console.log("colisiono con un obstaculo");
+                //console.log("colisiono con un obstaculo");
                 puedoReinciar = true;
                 //puedoReiniciar = true;
                 scene.onGameOver.notifyObservers(puedoReinciar); //cuando llego aqui notifico que es game over
@@ -265,7 +278,7 @@ function CrearEscenaPrincipal(engine, canvas) {
             camera.setTarget(pajaro, false, false); //la camara sigue al jugador llamado pajaro
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////                ////////////////////////////////////////////////////////////////////////////////////////////////
-        ////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS////////PUNTOS//////////
+        ////////DETECTAR PUNTOS ////////DETECTAR PUNTOS ////////DETECTAR PUNTOS ////////DETECTAR PUNTOS
         var Puntajes = scene.getMeshesByTags("puntos"); //busco el nodo padre que contiene a esas columnas
         Puntajes.forEach(function (i) {
             i.visibility = 0; //hago Visible/invisible las mallas que funcionan para sumar puntos
@@ -278,7 +291,7 @@ function CrearEscenaPrincipal(engine, canvas) {
             }, function () {
                 ConteoDePuntos += 1;
                 Puntos.innerHTML = ConteoDePuntos; //convierto a string
-                console.log("el pajaro entro al area para los puntos"); //muestro este mensaje por consola
+                //console.log("el pajaro entro al area para los puntos");//muestro este mensaje por consola
             }));
         });
         ///////////////////////////////////////////////////////////////////////////////
@@ -288,25 +301,21 @@ function CrearEscenaPrincipal(engine, canvas) {
         var dificultad = 0.000;
         function AumentarDificultad() {
             if (!puedoReinciar) {
-                dificultad -= 0.00001;
+                dificultad -= dificultadGeneral / 10000; //valor usado para aumentar la difultad
+                console.log("aumenta la dificultad");
                 //console.log(dificultad)
             }
         }
         if (!desactivarDificultad) //sino desactive la dificultad
          {
-            setInterval(AumentarDificultad, 100);
+            setInterval(AumentarDificultad, tiempoAumentarDificiltad); //llamo a esta función cada cierto tiempo
         }
-        // // const Esperar = (milliseconds) => //esto es una función para ejectuar cada cierto tiempo
-        // // {
-        // //     return new Promise(resolve => setTimeout(resolve, milliseconds))
-        // // }
-        // while(true)
-        // {
-        //     dificultad -= 0.00001 ;
-        //     console.log(dificultad)
-        //     Esperar(1000);
-        // }
+        ////////HERRAMIENTA PARA REPOSICIONAR OBJETOS////////HERRAMIENTA PARA REPOSICIONAR OBJETOS////////HERRAMIENTA PARA REPOSICIONAR OBJETOS
         ////EmphtyReposicionar            ////EmphtyReposicionar            ////EmphtyReposicionar
+        var guiaReposicionar = scene.getMeshesByTags("guiaReposicionar");
+        guiaReposicionar.forEach(function (i) {
+            i.visibility = visibleEmphtyReposicionar;
+        });
         var EmphtyReposicionar = scene.getNodeByName("EmphtyReposicionar");
         var EmphtyReposicionar2 = scene.getNodeByName("EmphtyReposicionar2");
         EmphtyReposicionar.visibility = visibleEmphtyReposicionar;
@@ -360,7 +369,7 @@ function CrearEscenaPrincipal(engine, canvas) {
         }, 300);
     });
     botonCssReiniciar.onclick = function () {
-        console.log("presione sobre el boton");
+        //console.log("presione sobre el boton")
         if (puedoReinciar == true) {
             scene = CrearEscenaPrincipal(engine, canvas); //VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
         }
@@ -487,11 +496,11 @@ function CrearMenu(engine, canvas) {
                     if (i.name == "suelo") {
                         i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, scene.getNodeByName("EmphtyReposicionar2").getAbsolutePosition().z - 0.2));
                         //console.log((scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePivotPoint().z);
-                        console.log("esta reposicionando suelo 1");
+                        //console.log("esta reposicionando suelo 1");
                     }
                     if (i.name == "suelo2") {
                         i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, scene.getNodeByName("EmphtyReposicionar").getAbsolutePosition().z - 0.2));
-                        console.log("esta reposicionando suelo 2");
+                        //console.log("esta reposicionando suelo 2");
                     }
                 }
                 // //console.log(i.position.z);
@@ -523,7 +532,7 @@ function CrearMenu(engine, canvas) {
     ////////INTERFACE//////////INTERFACE///////////INTERFACE////////////////////INTERFACE
     ///CREATE BUTTON
     botonCssReiniciar.onclick = function () {
-        console.log("presione sobre el boton");
+        //console.log("presione sobre el boton")
         if (puedoReinciar == true) {
             scene = CrearEscenaPrincipal(engine, canvas); //VUELVO A LLAMAR A LA FUNCION PARA REINICIAR LA ESCENA   
         }
@@ -533,34 +542,28 @@ function CrearMenu(engine, canvas) {
     }
     return scene; //retorno la escena
 }
+function PruebaEscenaMundo(engine, canvas) {
+    scene = new BABYLON.Scene(engine);
+    var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(10, 0, 5), scene);
+    camera.target = new BABYLON.Vector3(20, 10, 0);
+    camera.beta = 1.5;
+    camera.alpha = 0;
+    camera.radius = 0.700;
+    camera.panningSensibility = 5000;
+    // var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(20, 10, 0), scene);
+    //camera.rotation = new BABYLON.Vector3(0, 110, 0);
+    camera.attachControl(canvas, true);
+    scene.debugLayer.show();
+    BABYLON.SceneLoader.Append("./babylonExportBlender/", "Escenario.babylon", scene, function name(scene) {
+        //scene.activeCamera = (scene.getNodeByName("CameraBlender") as BABYLON.Camera);
+    });
+    return scene;
+}
 //NewScene();
-//CrearMenu(engine,canvas);
+// CrearMenu(engine,canvas);
 CrearEscenaPrincipal(engine, canvas); //creo la escena
+//PruebaEscenaMundo(engine,canvas);//creo la escena
 //principal renderLoop
 engine.runRenderLoop(function () {
     scene.render(); //renderizo la escena en el bucle principal
 });
-// // // suelos.forEach(i => {
-// // //     //i.position.set(0, i.position.y, i.position.z + velocidadDesplazamiento * scene.getEngine().getDeltaTime());//esto es para cambiar la posición del cuerpo fisico y la malla                       
-// // //     i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x,i.getAbsolutePosition().y,i.getAbsolutePosition().z  + velocidadDesplazamiento *scene.getEngine().getDeltaTime()));
-// // //     if(i.getAbsolutePosition().z <= -60)
-// // //     {
-// // //         //i.position.set(i.position.x,i.position.y,(40));
-// // //         if(i.name == "suelo")
-// // //         {
-// // //             i.setAbsolutePosition(new BABYLON.Vector3(
-// // //                 i.getAbsolutePosition().x,
-// // //                 i.getAbsolutePosition().y,
-// // //                 (scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePosition().z-0.2));
-// // //             //console.log((scene.getNodeByName("EmphtyReposicionar2") as BABYLON.Mesh).getAbsolutePivotPoint().z);
-// // //             console.log("esta reposicionando suelo 1");
-// // //         }
-// // //         if(i.name == "suelo2")
-// // //         {
-// // //             i.setAbsolutePosition(new BABYLON.Vector3(
-// // //                 i.getAbsolutePosition().x
-// // //                 ,i.getAbsolutePosition().y,
-// // //                 (scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh).getAbsolutePosition().z-0.2));
-// // //             console.log("esta reposicionando suelo 2");
-// // //         }
-// // //     }
