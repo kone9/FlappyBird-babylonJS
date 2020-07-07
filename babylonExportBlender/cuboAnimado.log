@@ -11,7 +11,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		Keep Z-up r-handed  :  no
 			processing env texture lysGenerated_sunset.env
 	Python World class constructor completed
-	processing begun of camera (UniversalCamera):  CameraBlender
+	WARNING: The following camera not visible in scene thus ignored: CameraBlender
 	processing begun of mesh:  columnas
 		processing begun of material:  Material
 			processing texture verde
@@ -33,7 +33,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 				texture type:  diffuseTexture, mapped using: "UVMap"
 			processing texture rojo
 				texture type:  diffuseTexture, mapped using: "UVMap"
-		processing begun of multimaterial:  Escenario.Multimaterial#0
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#0
 		num positions      :  151
 		num normals        :  151
 		num tangents       :  0
@@ -76,7 +76,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  pajaro
 		registered as also a user of material:  Material
 		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#1
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#1
 		num positions      :  45
 		num normals        :  45
 		num tangents       :  0
@@ -130,7 +130,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  pajaro
 		registered as also a user of material:  Material
 		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#2
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#2
 		num positions      :  45
 		num normals        :  45
 		num tangents       :  0
@@ -191,7 +191,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  pajaro
 		registered as also a user of material:  colisionMaterial
 		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#3
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#3
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -214,7 +214,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  pajaro
 		registered as also a user of material:  colisionMaterial
 		registered as also a user of material:  pajaro
-		processing begun of multimaterial:  Escenario.Multimaterial#4
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#4
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -670,7 +670,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 	processing begun of mesh:  Cube.005
 		processing begun of material:  colorEdificio
 		processing begun of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#5
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#5
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -683,7 +683,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#6
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#6
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -696,7 +696,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#7
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#7
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -709,7 +709,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#8
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#8
 		num positions      :  648
 		num normals        :  648
 		num tangents       :  0
@@ -722,7 +722,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#9
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#9
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -735,7 +735,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#10
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#10
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -748,7 +748,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#11
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#11
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -761,7 +761,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#12
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#12
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -774,7 +774,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#13
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#13
 		num positions      :  570
 		num normals        :  570
 		num tangents       :  0
@@ -787,7 +787,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#14
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#14
 		num positions      :  648
 		num normals        :  648
 		num tangents       :  0
@@ -800,7 +800,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#15
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#15
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -813,7 +813,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#16
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#16
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -826,7 +826,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#17
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#17
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -839,7 +839,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#18
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#18
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -852,7 +852,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#19
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#19
 		num positions      :  570
 		num normals        :  570
 		num tangents       :  0
@@ -922,7 +922,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#20
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#20
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -935,7 +935,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#21
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#21
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -948,7 +948,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#22
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#22
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -961,7 +961,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#23
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#23
 		num positions      :  648
 		num normals        :  648
 		num tangents       :  0
@@ -974,7 +974,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#24
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#24
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -987,7 +987,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#25
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#25
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -1000,7 +1000,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#26
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#26
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -1013,7 +1013,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#27
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#27
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -1026,7 +1026,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#28
+		processing begun of multimaterial:  cuboAnimado.Multimaterial#28
 		num positions      :  570
 		num normals        :  570
 		num tangents       :  0
@@ -1165,4 +1165,4 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 	writing mesh:  CuboAnimado
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 2.6893 secs
+elapsed time:  0 min, 2.6659 secs

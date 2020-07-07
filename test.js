@@ -126,7 +126,8 @@ function CrearEscenaPrincipal(engine, canvas) {
     //CAMARA Y EDITOR
     var camaraSigueJugador = false; //si la camara sigue al jugador
     var camaraSigueReposicionar = false; //si la camara sigue al objeto reposicionar
-    var ActivarEditor = true; //SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
+    var desactivarCamaraRotadoraPrueba = true; //para activar la camara de prueba que rota sobre un punto no es la importada desde Blender3D
+    var ActivarEditor = false; //SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
     ////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////COMIENZA EL JUEGO/////////////////////////////////////////////////
@@ -169,6 +170,11 @@ function CrearEscenaPrincipal(engine, canvas) {
     BABYLON.SceneLoader.Append("./babylonExportBlender/", "Escenario.babylon", scene, 
     //BABYLON.SceneLoader.ImportMesh("","/./","Gltf/Escenario.glb",scene,
     function (scene) {
+        //cubo importado con animaciones a parte
+        BABYLON.SceneLoader.ImportMesh("CuboAnimado", "./babylonExportBlender/", "cuboAnimado.babylon", scene, function (meshes) {
+            //console.log(meshes[0].getan);
+        });
+        var CuboAnimado = scene.getMeshByName("CuboAnimado");
         //enviroment creado rapidamente
         // var helper = scene.createDefaultEnvironment();
         // helper.setMainColor(new BABYLON.Color3(0.26,0.45,0.9));     
@@ -177,6 +183,9 @@ function CrearEscenaPrincipal(engine, canvas) {
         scene.getNodeByName("CameraBlender").fov = 0.40; //cambia el Field of view de la camara importada desde blender en este caso 0.30 representa 30 grados.
         //////////////////////////////////////////////////////////////////////////////////////////////////
         scene.onIniciar.notifyObservers(true); //"OBSERVADOR PERSONALIZADO"//notifica verdadero cuando inicio la escena 
+        if (!desactivarCamaraRotadoraPrueba) {
+            scene.activeCamera = camera;
+        }
         /////SUELOS//////////////// SUELOS ////////////////// SUELOS //////
         //buscar los nodos,osea las columnas y suelo.Guardo en variables para manipular
         var sueloMalla = scene.getMeshesByTags("sueloMalla");
@@ -323,6 +332,16 @@ function CrearEscenaPrincipal(engine, canvas) {
         if (camaraSigueReposicionar) {
             camera.setTarget(scene.getNodeByName("EmphtyReposicionar"), false, false);
         }
+        /////////////FONDOS/////////////FONDOS/////////////FONDOS/////////////FONDOS
+        var arboles = scene.getMeshesByTags("Arboles"); //busco el fondo llamado arboles
+        var ReposicionarArboles = scene.getMeshByName("ReposicionarArboles");
+        ReposicionarArboles.visibility = visibleMaestros;
+        var edificios = scene.getMeshesByTags("edificios");
+        edificios.forEach(function (i) {
+            i.visibility = visibleMaestros;
+        });
+        ////////////////////////////////////////////////////////////////////////////////
+        ///////BUCLE PRINCIPAL///////BUCLE PRINCIPAL///////BUCLE PRINCIPAL///////BUCLE PRINCIPAL      
         //Este es el bucle principal con propiedades físicas tambien esta el bucle común
         scene.onAfterPhysicsObservable.add(function () {
             //console.log(suelo.position.z)
@@ -355,6 +374,22 @@ function CrearEscenaPrincipal(engine, canvas) {
                         i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, EmphtyReposicionar.getAbsolutePivotPoint().z + velocidadDesplazamiento)); //hay que sumarle la velocidad de desplazamieto para que los suelos queden pegados
                         //console.log( EmphtyReposicionar.getAbsolutePivotPoint().z + velocidadDesplazamiento);
                     }
+                }
+            });
+            ///////////MOVER FONDO PRIMER PLANO///////////MOVER FONDO PRIMER PLANO///////////MOVER FONDO PRIMER PLANO
+            arboles.forEach(function (i) {
+                i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, i.getAbsolutePosition().z + velocidadDesplazamiento / 4));
+                if (i.getAbsolutePivotPoint().z <= -150) //si la posición es menor a -16 reposiciono,toma en cuenta el punto de origen
+                 {
+                    i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, ReposicionarArboles.getAbsolutePivotPoint().z + velocidadDesplazamiento)); //hay que sumarle la velocidad de desplazamieto para que los suelos queden pegados
+                    //console.log(EmphtyReposicionar.getAbsolutePosition().z + velocidadDesplazamiento);
+                }
+            });
+            /////////MOVER FONDO SEGUNDO PLANO /////////MOVER FONDO SEGUNDO PLANO /////////MOVER FONDO SEGUNDO PLANO
+            edificios.forEach(function (i) {
+                i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, i.getAbsolutePosition().z + velocidadDesplazamiento / 8));
+                if (i.getAbsolutePivotPoint().z < -50) {
+                    i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, 80 + velocidadDesplazamiento));
                 }
             });
         });

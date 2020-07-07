@@ -91,7 +91,8 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     //CAMARA Y EDITOR
     let camaraSigueJugador:boolean = false;//si la camara sigue al jugador
     let camaraSigueReposicionar:boolean = false;//si la camara sigue al objeto reposicionar
-    let ActivarEditor:boolean = true;//SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
+    let desactivarCamaraRotadoraPrueba:boolean= true;//para activar la camara de prueba que rota sobre un punto no es la importada desde Blender3D
+    let ActivarEditor:boolean = false;//SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
     ////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////COMIENZA EL JUEGO/////////////////////////////////////////////////
@@ -142,6 +143,13 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     BABYLON.SceneLoader.Append("./babylonExportBlender/", "Escenario.babylon", scene,
         //BABYLON.SceneLoader.ImportMesh("","/./","Gltf/Escenario.glb",scene,
         function (scene: BABYLON.Scene) {
+            
+            //cubo importado con animaciones a parte
+            BABYLON.SceneLoader.ImportMesh("CuboAnimado", "./babylonExportBlender/", "cuboAnimado.babylon", scene, function (meshes) {
+                //console.log(meshes[0].getan);
+            });
+
+            var CuboAnimado:BABYLON.AbstractMesh = scene.getMeshByName("CuboAnimado") as BABYLON.AbstractMesh;
             //enviroment creado rapidamente
             // var helper = scene.createDefaultEnvironment();
             // helper.setMainColor(new BABYLON.Color3(0.26,0.45,0.9));     
@@ -150,6 +158,11 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             (scene.getNodeByName("CameraBlender") as BABYLON.Camera).fov = 0.40;//cambia el Field of view de la camara importada desde blender en este caso 0.30 representa 30 grados.
             //////////////////////////////////////////////////////////////////////////////////////////////////
             scene.onIniciar.notifyObservers(true);//"OBSERVADOR PERSONALIZADO"//notifica verdadero cuando inicio la escena 
+            if(!desactivarCamaraRotadoraPrueba)
+            {
+                scene.activeCamera = camera;
+            }
+             
 
             /////SUELOS//////////////// SUELOS ////////////////// SUELOS //////
             //buscar los nodos,osea las columnas y suelo.Guardo en variables para manipular
@@ -328,7 +341,22 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             {
                 camera.setTarget(scene.getNodeByName("EmphtyReposicionar") as BABYLON.Mesh,false,false);
             }
-                
+
+            /////////////FONDOS/////////////FONDOS/////////////FONDOS/////////////FONDOS
+            var arboles:BABYLON.AbstractMesh[] = scene.getMeshesByTags("Arboles") as BABYLON.AbstractMesh[];//busco el fondo llamado arboles
+            var ReposicionarArboles:BABYLON.AbstractMesh = scene.getMeshByName("ReposicionarArboles") as BABYLON.AbstractMesh;
+            ReposicionarArboles.visibility = visibleMaestros;
+
+            var edificios:BABYLON.AbstractMesh[] = scene.getMeshesByTags("edificios") as BABYLON.AbstractMesh[];
+            edificios.forEach(i =>//para hacerlos visibles y invisibles a los maestros
+                {
+                    i.visibility =  visibleMaestros;
+                });
+            
+
+
+            ////////////////////////////////////////////////////////////////////////////////
+            ///////BUCLE PRINCIPAL///////BUCLE PRINCIPAL///////BUCLE PRINCIPAL///////BUCLE PRINCIPAL      
             //Este es el bucle principal con propiedades físicas tambien esta el bucle común
             scene.onAfterPhysicsObservable.add(() => { //ESTO ES COMO UN UPDATE DE GODOT O UNITY en babylon se usan los OBSERVABLES que son como señales personalizadas
                 //console.log(suelo.position.z)
@@ -384,6 +412,42 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                             //console.log( EmphtyReposicionar.getAbsolutePivotPoint().z + velocidadDesplazamiento);
                         }
                     }
+                });
+                ///////////MOVER FONDO PRIMER PLANO///////////MOVER FONDO PRIMER PLANO///////////MOVER FONDO PRIMER PLANO
+                arboles.forEach(i =>
+                {
+                    i.setAbsolutePosition(new BABYLON.Vector3(
+                        i.getAbsolutePosition().x,
+                        i.getAbsolutePosition().y,
+                        i.getAbsolutePosition().z + velocidadDesplazamiento / 4
+                        )
+                    );
+                    if(i.getAbsolutePivotPoint().z <= -150)//si la posición es menor a -16 reposiciono,toma en cuenta el punto de origen
+                    {
+                        
+                        i.setAbsolutePosition(new BABYLON.Vector3(
+                            i.getAbsolutePosition().x,
+                            i.getAbsolutePosition().y,
+                            ReposicionarArboles.getAbsolutePivotPoint().z  + velocidadDesplazamiento));//hay que sumarle la velocidad de desplazamieto para que los suelos queden pegados
+                        //console.log(EmphtyReposicionar.getAbsolutePosition().z + velocidadDesplazamiento);
+                    }
+                });
+                /////////MOVER FONDO SEGUNDO PLANO /////////MOVER FONDO SEGUNDO PLANO /////////MOVER FONDO SEGUNDO PLANO
+                edificios.forEach(i =>
+                {
+                    i.setAbsolutePosition(new BABYLON.Vector3(
+                        i.getAbsolutePosition().x,
+                        i.getAbsolutePosition().y,
+                        i.getAbsolutePosition().z + velocidadDesplazamiento / 8
+                    ));
+                    if(i.getAbsolutePivotPoint().z < -50)
+                    {
+                        i.setAbsolutePosition(new BABYLON.Vector3(
+                            i.getAbsolutePosition().x,
+                            i.getAbsolutePosition().y,
+                            80 + velocidadDesplazamiento
+                        ));
+                    }    
                 });
             });
         });
