@@ -8,7 +8,8 @@ Por ahora no voy a hacer tutoriales sobre babylon.js ya que me parece que Godot 
 
 Test de las mecánicas subidas a itchio,peso final del archivo 2.82MB
 comprimido 726kb 
-https://kone9.itch.io/flappybird-in-b...
+https://kone9.itch.io/flappybird-in-babylonjs
+
 
 Algunas cosas que se ven en este proyecto con babylon.js.
 importar escenas desde blender3D.
