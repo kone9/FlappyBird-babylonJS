@@ -170,10 +170,14 @@ function CrearEscenaPrincipal(engine, canvas) {
     BABYLON.SceneLoader.Append("./babylonExportBlender/", "Escenario.babylon", scene, 
     //BABYLON.SceneLoader.ImportMesh("","/./","Gltf/Escenario.glb",scene,
     function (scene) {
-        //cubo importado con animaciones a parte
-        BABYLON.SceneLoader.ImportMesh("CuboAnimado", "./babylonExportBlender/", "cuboAnimado.babylon", scene, function (meshes) {
-            //console.log(meshes[0].getan);
-        });
+        //PRueba con animaciones dejo comentado para que se vea
+        //que es posible importar una malla dentro de una escena importada
+        // // // BABYLON.SceneLoader.ImportMesh("", "./babylonExportBlender/", "cuboAnimado.glb", scene,
+        // // // function (meshes,particle,Skeleton) {
+        // // //     //console.log((meshes[0] as unknown as BABYLON.Animatable).getAnimations());
+        // // //     var animacionesCubo:BABYLON.Mesh = scene.getNodeByName("CuboAnimado") as BABYLON.Mesh;
+        // // //     animacionesCubo.beginAnimation("rotacion",true);
+        // // // });
         var CuboAnimado = scene.getMeshByName("CuboAnimado");
         //enviroment creado rapidamente
         // var helper = scene.createDefaultEnvironment();
@@ -364,7 +368,7 @@ function CrearEscenaPrincipal(engine, canvas) {
             suelos.forEach(function (i) {
                 //i.position.set(0, i.position.y, i.position.z + velocidadDesplazamiento * scene.getEngine().getDeltaTime());//esto es para cambiar la posición del cuerpo fisico y la malla                       
                 i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, i.getAbsolutePosition().z + velocidadDesplazamiento));
-                if (i.getAbsolutePivotPoint().z <= -60) {
+                if (i.getAbsolutePivotPoint().z <= -53) {
                     //i.position.set(i.position.x,i.position.y,(40));
                     if (i.name == "suelo") {
                         i.setAbsolutePosition(new BABYLON.Vector3(i.getAbsolutePosition().x, i.getAbsolutePosition().y, EmphtyReposicionar2.getAbsolutePivotPoint().z + velocidadDesplazamiento)); //hay que sumarle la velocidad de desplazamieto para que los suelos queden pegados

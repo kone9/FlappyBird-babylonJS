@@ -1045,13 +1045,13 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num triangles      :  12
 	processing begun of mesh:  Plane
 		processing begun of material:  nuves
-		num positions      :  26
-		num normals        :  26
+		num positions      :  75
+		num normals        :  75
 		num tangents       :  0
-		num uvs            :  52
+		num uvs            :  150
 		num uvs2           :  0
 		num colors         :  0
-		num triangles      :  24
+		num triangles      :  96
 	processing begun of mesh:  CuboAnimado
 		processing begun of material:  rojo
 		registered as also a user of material:  rojo
@@ -1165,4 +1165,4 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 	writing mesh:  CuboAnimado
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 2.4954 secs
+elapsed time:  0 min, 2.5803 secs

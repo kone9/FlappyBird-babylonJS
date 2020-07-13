@@ -94,5 +94,5 @@ Mesh, positions, normals, tangents, uvs, uvs2, colors, triangles, Skel Weights
 "Cube.023", 577, 577, 0, 1154, 0, 0, 356
 "Cube.024", 570, 570, 0, 1140, 0, 0, 356
 "MaestroEdificioDerecha.001", 29, 29, 0, 58, 0, 0, 12
-"Plane", 26, 26, 0, 52, 0, 0, 24
+"Plane", 75, 75, 0, 150, 0, 0, 96
 "CuboAnimado", 29, 29, 0, 58, 0, 0, 12

@@ -135,6 +135,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     //light3.intensity = 5;
     light3.setDirectionToTarget(new BABYLON.Vector3(0,90,0));
     
+
     //en babylon las escenas se cargan asincronicamente por lo tanto para que funcionen
     //hay que manejar los modelos desde el sceneLoader,esto puede traer
     //muchos problemas,pero tendría que ser posible solucionarlo
@@ -144,10 +145,16 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
         //BABYLON.SceneLoader.ImportMesh("","/./","Gltf/Escenario.glb",scene,
         function (scene: BABYLON.Scene) {
             
-            //cubo importado con animaciones a parte
-            BABYLON.SceneLoader.ImportMesh("CuboAnimado", "./babylonExportBlender/", "cuboAnimado.babylon", scene, function (meshes) {
-                //console.log(meshes[0].getan);
-            });
+            //PRueba con animaciones dejo comentado para que se vea
+            //que es posible importar una malla dentro de una escena importada
+            // // // BABYLON.SceneLoader.ImportMesh("", "./babylonExportBlender/", "cuboAnimado.glb", scene,
+            // // // function (meshes,particle,Skeleton) {
+            // // //     //console.log((meshes[0] as unknown as BABYLON.Animatable).getAnimations());
+            // // //     var animacionesCubo:BABYLON.Mesh = scene.getNodeByName("CuboAnimado") as BABYLON.Mesh;
+            // // //     animacionesCubo.beginAnimation("rotacion",true);
+                
+                
+            // // // });
 
             var CuboAnimado:BABYLON.AbstractMesh = scene.getMeshByName("CuboAnimado") as BABYLON.AbstractMesh;
             //enviroment creado rapidamente
@@ -392,7 +399,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                         i.getAbsolutePosition().y,
                         i.getAbsolutePosition().z + velocidadDesplazamiento)
                     );
-                    if(i.getAbsolutePivotPoint().z <= -60)
+                    if(i.getAbsolutePivotPoint().z <= -53)
                     {
                         //i.position.set(i.position.x,i.position.y,(40));
                         if(i.name == "suelo")

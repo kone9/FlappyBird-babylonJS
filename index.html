@@ -38,10 +38,14 @@
                 position: absolute;
                 background-image: url("./boton.png");
                 background-repeat: no-repeat;
+
                 width: 208px; /* Definir de acuerdo al ancho de la imagen */
                 height: 116px; /* Definir de acuerdo al alto de la imagen */
-                top: 350px;
-                left: 500px;
+                /* top: 350px;
+                left: 500px; */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
                 transition: 0.1s;
                 /*display: block;
                 margin-left: auto;
@@ -49,7 +53,8 @@
             }
             #boton:hover
             {
-                transform: scale(1.5);
+                
+                transform: scale(1.5,1.5);
                 opacity: 0.9;
                 
             }    
