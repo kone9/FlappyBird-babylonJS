@@ -9,53 +9,99 @@
 /// <reference path="babylon.gui.min.js"/>
 
 //////////////Esta clase no la uso es de ejemplo para tener una idea de como usar clases////////////////////////
-class Pajaro //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
+class ObjetoFisico //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
 {
-    private _pajaroMesh: BABYLON.AbstractMesh;//guardo el mesh del pajaro en esta variable
-    private _cuerpoFisico: BABYLON.PhysicsImpostor;
-    private _pajaroPosicion: BABYLON.Vector3;
-    private _pajaroMaterial: BABYLON.Material;
-   
-    constructor(pajaroMesh:BABYLON.AbstractMesh)
+    private _mesh: BABYLON.AbstractMesh;//guardo el mesh del pajaro en esta variable
+    private _meshColision: BABYLON.AbstractMesh;
+    private _maestroFisico: BABYLON.PhysicsImpostor;//para tener una referencía al cuerpo físico de este objeto
+    private _posicion: BABYLON.Vector3;//referencia a la posición de este objeto
+    private _posicionColision: BABYLON.Vector3;
+    private _material: BABYLON.Material;//referencía al material de este objeto
+
+    constructor(mallaParaRepresentarElObjeto:BABYLON.AbstractMesh,mallaCuerpoFisico:BABYLON.AbstractMesh)
     {
-        this.pajaroMesh = pajaroMesh;//hago un get desde pajaroMesh
-        this.cuerpoFisico = this.pajaroMesh.physicsImpostor; 
-        this.cuerpoFisico = new BABYLON.PhysicsImpostor(this.pajaroMesh,BABYLON.PhysicsImpostor.BoxImpostor,{mass:0});
+        //importante para que funcione los cuerpor rigidos hijos tienen
+        //que ser creados como se ven en las siguientes lineas
+        //si cambias las lineas de posición no funcionaran correctamente
+        this.meshColision = mallaCuerpoFisico;//obtengo la malla del cuerop fisico
+        this.CrearCuerpoRigidoEnColision()//creo el cuerpo Rigido en la colision
+        this.mesh = mallaParaRepresentarElObjeto;//obtengo la malla de objeto
+        this.CrearCuerpoRigidoEnMalla();//creo el cuerpo Rigido a la malla que controla la colisicion se suman las masas
+        this.maestroFisico = this.mesh.physicsImpostor;
+
+        this.posicion = this.mesh.position;//posicion de la malla
+        this.material = this.mesh.material;//material de la malla
+        this.posicionColision = this.meshColision.position;//posicion del cuerpo Rigido
     }
 
-    public volar()//acción volar
+    private CrearCuerpoRigidoEnColision()//crea el cuerpo rigido a la colisión "TIENE COLISION"
     {
-        this.cuerpoFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
-        this.cuerpoFisico.applyImpulse(new BABYLON.Vector3(0, 0.5, 0), this.cuerpoFisico.getObjectCenter());
+        this.meshColision.physicsImpostor = new BABYLON.PhysicsImpostor(this.meshColision, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0, friction: 0, restitution: 0 }, scene);//creo el cuerpoFisico al
     }
-
-    public get pajaroMaterial(): BABYLON.Material {
-        return this._pajaroMaterial;
+    private CrearCuerpoRigidoEnMalla()//crea el cuerpo rigido a la malla importante "NO TIENE COLISION"
+    {
+        this.mesh.physicsImpostor = new BABYLON.PhysicsImpostor(this.mesh, BABYLON.PhysicsImpostor.NoImpostor, { mass: 0.1, friction: 1, restitution: 0 }, scene);
     }
-    public set pajaroMaterial(value: BABYLON.Material) {
-        this._pajaroMaterial = value;
+    public get mesh(): BABYLON.AbstractMesh {//para obtener la malla de este objeto
+        return this._mesh;
     }
-    public get pajaroPosicion(): BABYLON.Vector3 {
-        return this._pajaroPosicion;
+    public set mesh(value: BABYLON.AbstractMesh) {//para cambiar la malla de este objeto
+        this._mesh = value;
     }
-    public set pajaroPosicion(value: BABYLON.Vector3) {
-        this._pajaroPosicion = value;
+    public DestruirFisicaDeEsteObjeto(destruirFisicas:boolean= false)//destruir la física del objeto
+    {
+        this.maestroFisico.dispose();
     }
-    public get cuerpoFisico(): BABYLON.PhysicsImpostor {
-        return this._cuerpoFisico;
+    public get meshColision(): BABYLON.AbstractMesh {//obtengo la malla de la colision de este objeto
+        return this._meshColision;
     }
-    public set cuerpoFisico(value: BABYLON.PhysicsImpostor) {
-        this._cuerpoFisico = value;
+    public set meshColision(value: BABYLON.AbstractMesh) {//cambio la malla de la colison de este objeto
+        this._meshColision = value;
     }
-    public get pajaroMesh(): BABYLON.AbstractMesh {
-        return this._pajaroMesh;
+    public get posicionColision(): BABYLON.Vector3 {//obtengo la posicion de la colision
+        return this._posicionColision;
     }
-    public set pajaroMesh(value: BABYLON.AbstractMesh) {
-        this._pajaroMesh = value;
+    public set posicionColision(value: BABYLON.Vector3) {
+        this._posicionColision = value;
+    }
+    public get posicion(): BABYLON.Vector3 {
+        return this._posicion;
+    }
+    public set posicion(value: BABYLON.Vector3) {
+        this._posicion = value;
+    }
+    public get material(): BABYLON.Material {
+        return this._material;
+    }
+    public set material(value: BABYLON.Material) {
+        this._material = value;
+    }
+    public get maestroFisico(): BABYLON.PhysicsImpostor {
+        return this._maestroFisico;
+    }
+    public set maestroFisico(value: BABYLON.PhysicsImpostor) {
+        this._maestroFisico = value;
+    }
+    public Impulsar(fuerzaImpulso:number = 0.5)//acción volar
+    {
+        this.maestroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
+        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0,fuerzaImpulso,0), this.maestroFisico.getObjectCenter());
+    }
+    public ImpulsarMorir(fuerzaImpulso:number = -0.4)//acción volar
+    {
+        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0,fuerzaImpulso,0), this.maestroFisico.getObjectCenter());
+    }
+    public ColisionVisible(cantidadDeVisibilidad:number = 1)
+    {
+        this.meshColision.isVisible = true;
+        this.meshColision.visibility = cantidadDeVisibilidad;
     }
 
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /////aqui empieza la aplicación/////////
 var canvas: HTMLCanvasElement = document.getElementById("renderCanvas") as HTMLCanvasElement;//referencia al html con la etiqueta renderCanvas
@@ -78,6 +124,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     let visibleMaestros:number = 0;//HACE VISIBLE INVISIBLE LOS MAESTROS 0 invisible 1 visible
     let visibleEmphtyReposicionar:number = 0;//PARA HACER VISIBLES OBJETOS VACIOS QUE MUESTRAN UNA POSICIÓNES
     let visibleTodasLasColisiones:number = 0;//para hacer visibles invisibles las colisiones 0 invisible 1 visible
+    let visibleColisionPajaro:number = 0;//para hacer visible la colision del Pajaro
     let visibleColumnas:number = 1;//HACE INVISIBLE LAS COLUMNAS
     let desactivarColisionColumnas:boolean = false;//DESACTIVO COLISION COLUMNAS
     let visibleSuelo:number = 1;//HACE VISIBLE INVISIBLE LOS suelos 0 invisible 1 visible
@@ -87,12 +134,12 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     let velocidadMovimientoJuego:number = -0.1;//para hacer que las columnas se muevan más rápido esto es instantaneo
     let desactivarDificultad:boolean = false;//Relacionado con el timer
     let dificultadGeneral = 1.0;//Dificultad general de juego mayor numero más rápido aumenta la velocidad puede ser un número flotante
-    let tiempoAumentarDificiltad = 1000;//cada ves que pasa este tiempo en milisegundos aumenta la dificultad se usa con deficultadGeneral
+    let tiempoAumentarDificiltad = 5000;//cada ves que pasa este tiempo en milisegundos aumenta la dificultad se usa con deficultadGeneral
     //CAMARA Y EDITOR
     let camaraSigueJugador:boolean = false;//si la camara sigue al jugador
     let camaraSigueReposicionar:boolean = false;//si la camara sigue al objeto reposicionar
     let desactivarCamaraRotadoraPrueba:boolean= true;//para activar la camara de prueba que rota sobre un punto no es la importada desde Blender3D
-    let ActivarEditor:boolean = false;//SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
+    let ActivarEditor:boolean = true;//SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
     ////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////COMIENZA EL JUEGO/////////////////////////////////////////////////
@@ -147,21 +194,69 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             
             //PRueba con animaciones dejo comentado para que se vea
             //que es posible importar una malla dentro de una escena importada
-            // // // BABYLON.SceneLoader.ImportMesh("", "./babylonExportBlender/", "cuboAnimado.glb", scene,
-            // // // function (meshes,particle,Skeleton) {
-            // // //     //console.log((meshes[0] as unknown as BABYLON.Animatable).getAnimations());
-            // // //     var animacionesCubo:BABYLON.Mesh = scene.getNodeByName("CuboAnimado") as BABYLON.Mesh;
-            // // //     animacionesCubo.beginAnimation("rotacion",true);
+            //en este caso importo la vuelta al mundoAnimada
+            BABYLON.SceneLoader.ImportMesh("", "./babylonExportBlender/", "VueltaAlMundoAnimada.glb", scene,
+            function (meshes,particle,Skeleton) {
+                //console.log((meshes[0] as unknown as BABYLON.Animatable).getAnimations());
+                var VueltaAlMundo:BABYLON.Mesh = scene.getNodeByName("VueltaAlMundoAnimada") as BABYLON.Mesh;
+                var posicionVUeltaAlmundo:BABYLON.Mesh = scene.getNodeByName("posicionVUeltaAlmundo") as BABYLON.Mesh;
+                var padreVueltaAlMundo:BABYLON.Node = scene.getMeshByName("MaestroEdificioDerecha") as BABYLON.Node;
+                
+                VueltaAlMundo.parent = padreVueltaAlMundo;//hago que vuelta al mundo sea hijo del objeto que se mueve
+                VueltaAlMundo.setAbsolutePosition(posicionVUeltaAlmundo.getAbsolutePivotPoint()); 
+            });
+            
                 
                 
+            //Esto es un ejemplo de como crear animaciónes con babylon.
+            //Lo dejo comentado Para tenerlo por las dudas
+            // // // var VueltaAllmundo:BABYLON.AbstractMesh = scene.getMeshByName("MaestroVueltaAlMundoRuleta") as BABYLON.AbstractMesh;//busco la vuelta al mundo
+
+            // // // //Creo el tipo de  animación
+            // // // var animacionVUeltaAlMundo:BABYLON.Animation = new BABYLON.Animation( 
+            // // //         "vueltaAlMundoAnimacionRotacionSobreX",//nombre de la animación
+            // // //         "rotation.x",//parametro donde influira la animación osea la rotación en x,tengan en cuenta de hacer asi para buscarlas "VueltaAllmundo.rotation.x"
+            // // //         24,//fotogramas por segundo
+            // // //         BABYLON.Animation.ANIMATIONTYPE_FLOAT,//tipo de animacion flotante numeros
+            // // //         BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE//la animacion es ciclica cuando termina vuelve a reiniciar
+            // // //     );
+            
+            // // // //creo las claves
+            // // // // Animation keys
+            // // // var keys = [];
+            // // // //At the animation key 0, the value of rotation is "1"
+            // // // keys.push({
+            // // //     frame: 0,
+            // // //     value: 0
+            // // // });
+            // // // //At the animation key 20, the value of rotation is "0.2"
+            // // // keys.push({
+            // // //     frame: 50,
+            // // //     value: 2
+            // // // });
+            // // // //At the animation key 100, the value of rotation is "1"
+            // // // keys.push({
+            // // //     frame: 100,
+            // // //     value: 4
             // // // });
 
-            var CuboAnimado:BABYLON.AbstractMesh = scene.getMeshByName("CuboAnimado") as BABYLON.AbstractMesh;
-            //enviroment creado rapidamente
+            // // // //agrego las claves a la animación
+            // // // animacionVUeltaAlMundo.setKeys(keys);
+            
+            // // // //enlazo la animación al objeto vuelta al mundo que esta en la escena
+            // // // VueltaAllmundo.animations.push(animacionVUeltaAlMundo);
+            
+            // // // //inicio la animación en la escena,toma como parametro el objeto
+            // // // scene.beginAnimation(VueltaAllmundo,0,100,true);//inicializo la animación
+
+
+            //Ejemplo de como Crear un enviroment rapidamente
             // var helper = scene.createDefaultEnvironment();
             // helper.setMainColor(new BABYLON.Color3(0.26,0.45,0.9));     
             //var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
             //var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
+            
+            
             (scene.getNodeByName("CameraBlender") as BABYLON.Camera).fov = 0.40;//cambia el Field of view de la camara importada desde blender en este caso 0.30 representa 30 grados.
             //////////////////////////////////////////////////////////////////////////////////////////////////
             scene.onIniciar.notifyObservers(true);//"OBSERVADOR PERSONALIZADO"//notifica verdadero cuando inicio la escena 
@@ -175,8 +270,10 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             //buscar los nodos,osea las columnas y suelo.Guardo en variables para manipular
             var sueloMalla:BABYLON.Mesh[] = scene.getMeshesByTags("sueloMalla") as BABYLON.Mesh[];
             sueloMalla.forEach(i => {
+                i.isVisible = true;
                 i.visibility = visibleSuelo;
             });
+            
             
             var suelosColision:BABYLON.Mesh[] = scene.getMeshesByTags("sueloColision") as BABYLON.Mesh[];
             suelosColision.forEach(i => {
@@ -193,6 +290,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
 
             var suelos: BABYLON.Mesh[] = scene.getMeshesByTags("suelo") as BABYLON.Mesh[];//busco el nodo padre que contiene a esas columnas
             suelos.forEach(i => { //recorro todos esos objetos ycreo un impostores físicos automaticamente
+                i.isVisible = true;
                 i.visibility = visibleMaestros;//MUESTRA LA MALLA DEL SUELO
                 i.physicsImpostor = new BABYLON.PhysicsImpostor(i, BABYLON.PhysicsImpostor.NoImpostor, { mass: 0 ,friction : 1,restitution : 0}, scene);//creo el impostor físico al padre es importante que este último y que no tenga cuerpo ya que los cuerpos son manejados por los hijos
                 BABYLON.Tags.AddTagsTo(i.physicsImpostor, "obstaculo")//agrego la etiqueta
@@ -241,34 +339,28 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////
             //////PAJARO////////////////PAJARO////////////////////////PAJARO////////   
-            var pajaroColision: BABYLON.AbstractMesh = scene.getNodeByName("pajaroColision") as BABYLON.AbstractMesh;
-            pajaroColision.visibility = visibleTodasLasColisiones;//MUESTRA LA COLISION DEL PAJARO
-            pajaroColision.physicsImpostor = new BABYLON.PhysicsImpostor(pajaroColision, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0, friction: 0, restitution: 0 }, scene);
-            
-            var pajaro: BABYLON.AbstractMesh = scene.getNodeByName("pajaro") as BABYLON.AbstractMesh;
-            pajaro.physicsImpostor = new BABYLON.PhysicsImpostor(pajaro, BABYLON.PhysicsImpostor.NoImpostor, { mass: 0.1, friction: 1, restitution: 0 }, scene);
-            
-            var pajaroFisico: BABYLON.PhysicsImpostor = pajaro.physicsImpostor;
+            let ObtenerpajaroColision: BABYLON.AbstractMesh = scene.getNodeByName("pajaroColision") as BABYLON.AbstractMesh;
+            let ObtenerPajaro: BABYLON.AbstractMesh = scene.getNodeByName("pajaro") as BABYLON.AbstractMesh;
+            let pajaro:ObjetoFisico = new ObjetoFisico(ObtenerPajaro,ObtenerpajaroColision);
+            pajaro.ColisionVisible(visibleColisionPajaro);
 
-            //pajaroFisico.
             // asi se detectan colisiones en babylon con el metodo onCollideEvent
             // uso como referencía physics impostor de un objeto como el pájaro
-
-            pajaroFisico.onCollideEvent= (collider, collidedWith) => {
-                //console.log(BABYLON.Tags.GetTags(collidedWith,"obstaculo"));
+            pajaro.maestroFisico.onCollideEvent= (collider, collidedWith) => {
                 //importantisimo detectar colisiones usando "Tags" serian grupos en godot
                 if (BABYLON.Tags.GetTags(collidedWith) === "obstaculo") {
-                    //console.log("colisiono con un obstaculo");
                     puedoReinciar = true;
-                    //puedoReiniciar = true;
+                    pajaro.ImpulsarMorir();//impulso al morir por defecto -0.4
                     scene.onGameOver.notifyObservers(puedoReinciar);//cuando llego aqui notifico que es game over
                     //console.log("GAMEOVER desde la colisicón del pajaro: " + this.gameOverPublico);
-                    pajaroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaroFisico.getObjectCenter());
+                    //pajaroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaroFisico.getObjectCenter());
+                    //pajaro.maestroFisico.applyImpulse(new BABYLON.Vector3(0, -0.9, 0), pajaro.maestroFisico.getObjectCenter());
+                    //pajaro.maestroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaro.maestroFisico.getObjectCenter())
                 }
             };
             if(desactivarFisicasPajaro)//si desactivo las físicas
             {
-                pajaroFisico.dispose();//borrar para ver el pájaro
+                pajaro.DestruirFisicaDeEsteObjeto();
             }
             //pajaro.dispose();//borrar para ver el pájaro
 
@@ -278,9 +370,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                     case BABYLON.PointerEventTypes.POINTERDOWN:
                         if (!puedoReinciar)//sino es GameOver
                         {
-                            pajaroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
-                            pajaroFisico.applyImpulse(new BABYLON.Vector3(0, 0.5, 0), pajaroFisico.getObjectCenter());
-                            //console.log(pajaroFisico.getLinearVelocity());
+                            pajaro.Impulsar();//por defecto 0.5 de impulso
                         }
                         break;
                 }
@@ -288,7 +378,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
 
             if(camaraSigueJugador)//para hacer que la camara siga al jugador
             {
-                camera.setTarget(pajaro,false,false);//la camara sigue al jugador llamado pajaro
+                camera.setTarget(pajaro.mesh,false,false);//la camara sigue al jugador llamado pajaro
             }
             ////////////////////////////////////////////////////////////////////////////////////////////////                ////////////////////////////////////////////////////////////////////////////////////////////////
             ////////DETECTAR PUNTOS ////////DETECTAR PUNTOS ////////DETECTAR PUNTOS ////////DETECTAR PUNTOS
@@ -447,7 +537,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                         i.getAbsolutePosition().y,
                         i.getAbsolutePosition().z + velocidadDesplazamiento / 8
                     ));
-                    if(i.getAbsolutePivotPoint().z < -50)
+                    if(i.getAbsolutePivotPoint().z < -150)
                     {
                         i.setAbsolutePosition(new BABYLON.Vector3(
                             i.getAbsolutePosition().x,
@@ -486,6 +576,8 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
         return Math.round(Math.random() * (max - min) + min);
     }
 
+
+    
     async function Timer(tiempoEspera : number)
     {
         return new Promise(resolve => setTimeout(resolve, tiempoEspera))

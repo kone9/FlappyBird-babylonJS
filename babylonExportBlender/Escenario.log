@@ -11,6 +11,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		Keep Z-up r-handed  :  no
 			processing env texture lysGenerated_sunset.env
 	Python World class constructor completed
+	processing begun of node:  posicionVUeltaAlmundo
 	processing begun of camera (UniversalCamera):  CameraBlender
 	processing begun of mesh:  columnas
 		processing begun of material:  Material
@@ -667,7 +668,46 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  304
-	processing begun of mesh:  Cube.005
+	processing begun of mesh:  ReposicionarArboles
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  arbolesPrimerPlano1.001
+		processing begun of material:  verdePasto
+		registered as also a user of material:  verdePasto
+		num positions      :  406
+		num normals        :  406
+		num tangents       :  0
+		num uvs            :  812
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  304
+	processing begun of mesh:  arbolesPrimerPlano2.001
+		processing begun of material:  verdePasto
+		registered as also a user of material:  verdePasto
+		num positions      :  466
+		num normals        :  466
+		num tangents       :  0
+		num uvs            :  932
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  352
+	processing begun of mesh:  arbolesPrimerPlano3.001
+		processing begun of material:  verdePasto
+		registered as also a user of material:  verdePasto
+		num positions      :  403
+		num normals        :  403
+		num tangents       :  0
+		num uvs            :  806
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  304
+	processing begun of mesh:  Cube.003
 		processing begun of material:  colorEdificio
 		processing begun of material:  colorVentanaEdificio
 		processing begun of multimaterial:  Escenario.Multimaterial#5
@@ -678,7 +718,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  356
-	processing begun of mesh:  Cube.003
+	processing begun of mesh:  Cube.004
 		processing begun of material:  colorEdificio
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
@@ -691,7 +731,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  356
-	processing begun of mesh:  Cube.004
+	processing begun of mesh:  Cube.005
 		processing begun of material:  colorEdificio
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
@@ -782,147 +822,12 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  356
-	processing begun of mesh:  Cube.012
-		processing begun of material:  colorEdificio
-		processing begun of material:  colorVentanaEdificio
-		registered as also a user of material:  colorEdificio
-		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#14
-		num positions      :  648
-		num normals        :  648
-		num tangents       :  0
-		num uvs            :  1296
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  400
-	processing begun of mesh:  Cube.013
-		processing begun of material:  colorEdificio
-		processing begun of material:  colorVentanaEdificio
-		registered as also a user of material:  colorEdificio
-		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#15
-		num positions      :  562
-		num normals        :  562
-		num tangents       :  0
-		num uvs            :  1124
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  356
-	processing begun of mesh:  Cube.014
-		processing begun of material:  colorEdificio
-		processing begun of material:  colorVentanaEdificio
-		registered as also a user of material:  colorEdificio
-		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#16
-		num positions      :  562
-		num normals        :  562
-		num tangents       :  0
-		num uvs            :  1124
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  356
-	processing begun of mesh:  Cube.015
-		processing begun of material:  colorEdificio
-		processing begun of material:  colorVentanaEdificio
-		registered as also a user of material:  colorEdificio
-		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#17
-		num positions      :  577
-		num normals        :  577
-		num tangents       :  0
-		num uvs            :  1154
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  356
-	processing begun of mesh:  Cube.016
-		processing begun of material:  colorEdificio
-		processing begun of material:  colorVentanaEdificio
-		registered as also a user of material:  colorEdificio
-		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#18
-		num positions      :  577
-		num normals        :  577
-		num tangents       :  0
-		num uvs            :  1154
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  356
-	processing begun of mesh:  Cube.017
-		processing begun of material:  colorEdificio
-		processing begun of material:  colorVentanaEdificio
-		registered as also a user of material:  colorEdificio
-		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#19
-		num positions      :  570
-		num normals        :  570
-		num tangents       :  0
-		num uvs            :  1140
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  356
-	processing begun of mesh:  MaestroEdificioIzquierda
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  12
-	processing begun of mesh:  MaestroEdificioDerecha
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  12
-	processing begun of mesh:  ReposicionarArboles
-		WARNING: No materials have been assigned: 
-		num positions      :  29
-		num normals        :  29
-		num tangents       :  0
-		num uvs            :  58
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  12
-	processing begun of mesh:  arbolesPrimerPlano1.001
-		processing begun of material:  verdePasto
-		registered as also a user of material:  verdePasto
-		num positions      :  406
-		num normals        :  406
-		num tangents       :  0
-		num uvs            :  812
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  304
-	processing begun of mesh:  arbolesPrimerPlano2.001
-		processing begun of material:  verdePasto
-		registered as also a user of material:  verdePasto
-		num positions      :  466
-		num normals        :  466
-		num tangents       :  0
-		num uvs            :  932
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  352
-	processing begun of mesh:  arbolesPrimerPlano3.001
-		processing begun of material:  verdePasto
-		registered as also a user of material:  verdePasto
-		num positions      :  403
-		num normals        :  403
-		num tangents       :  0
-		num uvs            :  806
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  304
 	processing begun of mesh:  Cube.001
 		processing begun of material:  colorEdificio
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#20
+		processing begun of multimaterial:  Escenario.Multimaterial#14
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -935,7 +840,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#21
+		processing begun of multimaterial:  Escenario.Multimaterial#15
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -948,7 +853,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#22
+		processing begun of multimaterial:  Escenario.Multimaterial#16
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -961,7 +866,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#23
+		processing begun of multimaterial:  Escenario.Multimaterial#17
 		num positions      :  648
 		num normals        :  648
 		num tangents       :  0
@@ -974,7 +879,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#24
+		processing begun of multimaterial:  Escenario.Multimaterial#18
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -987,7 +892,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#25
+		processing begun of multimaterial:  Escenario.Multimaterial#19
 		num positions      :  562
 		num normals        :  562
 		num tangents       :  0
@@ -1000,7 +905,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#26
+		processing begun of multimaterial:  Escenario.Multimaterial#20
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -1013,7 +918,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
-		processing begun of multimaterial:  Escenario.Multimaterial#27
+		processing begun of multimaterial:  Escenario.Multimaterial#21
 		num positions      :  577
 		num normals        :  577
 		num tangents       :  0
@@ -1026,6 +931,84 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  colorVentanaEdificio
 		registered as also a user of material:  colorEdificio
 		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#22
+		num positions      :  570
+		num normals        :  570
+		num tangents       :  0
+		num uvs            :  1140
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.012
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#23
+		num positions      :  648
+		num normals        :  648
+		num tangents       :  0
+		num uvs            :  1296
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  400
+	processing begun of mesh:  Cube.013
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#24
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.014
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#25
+		num positions      :  562
+		num normals        :  562
+		num tangents       :  0
+		num uvs            :  1124
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.015
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#26
+		num positions      :  577
+		num normals        :  577
+		num tangents       :  0
+		num uvs            :  1154
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.016
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
+		processing begun of multimaterial:  Escenario.Multimaterial#27
+		num positions      :  577
+		num normals        :  577
+		num tangents       :  0
+		num uvs            :  1154
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  356
+	processing begun of mesh:  Cube.017
+		processing begun of material:  colorEdificio
+		processing begun of material:  colorVentanaEdificio
+		registered as also a user of material:  colorEdificio
+		registered as also a user of material:  colorVentanaEdificio
 		processing begun of multimaterial:  Escenario.Multimaterial#28
 		num positions      :  570
 		num normals        :  570
@@ -1034,6 +1017,421 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  356
+	processing begun of mesh:  Cube
+		processing begun of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of node:  Empty.001
+	processing begun of mesh:  Cube.025
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.036
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.051
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.026
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  30
+		num normals        :  30
+		num tangents       :  0
+		num uvs            :  60
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.027
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.028
+		processing begun of material:  VerdeCelesteOscuro
+		processing begun of material:  VerdeCeleste
+		processing begun of multimaterial:  Escenario.Multimaterial#29
+		num positions      :  928
+		num normals        :  928
+		num tangents       :  0
+		num uvs            :  1856
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  412
+	processing begun of mesh:  Cube.029
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.030
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.031
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  63
+		num normals        :  63
+		num tangents       :  0
+		num uvs            :  126
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  28
+	processing begun of mesh:  Cube.032
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  58
+		num normals        :  58
+		num tangents       :  0
+		num uvs            :  116
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  28
+	processing begun of mesh:  Cube.033
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  66
+		num normals        :  66
+		num tangents       :  0
+		num uvs            :  132
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  28
+	processing begun of mesh:  Cube.034
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.035
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		processing begun of multimaterial:  Escenario.Multimaterial#30
+		num positions      :  2096
+		num normals        :  2096
+		num tangents       :  0
+		num uvs            :  4192
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  1128
+	processing begun of mesh:  Cube.037
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.038
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#31
+		num positions      :  1166
+		num normals        :  1166
+		num tangents       :  0
+		num uvs            :  2332
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  604
+	processing begun of mesh:  Cube.039
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#32
+		num positions      :  1327
+		num normals        :  1327
+		num tangents       :  0
+		num uvs            :  2654
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  756
+	processing begun of mesh:  Cube.040
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#33
+		num positions      :  1869
+		num normals        :  1869
+		num tangents       :  0
+		num uvs            :  3738
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  868
+	processing begun of mesh:  Cube.041
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#34
+		num positions      :  3792
+		num normals        :  3792
+		num tangents       :  0
+		num uvs            :  7584
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  2052
+	processing begun of mesh:  Cube.042
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#35
+		num positions      :  469
+		num normals        :  469
+		num tangents       :  0
+		num uvs            :  938
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  268
+	processing begun of mesh:  Cube.043
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.044
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.045
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.046
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.047
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.048
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.049
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#36
+		num positions      :  3060
+		num normals        :  3060
+		num tangents       :  0
+		num uvs            :  6120
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  1676
+	processing begun of mesh:  Cube.050
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.052
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.053
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#37
+		num positions      :  778
+		num normals        :  778
+		num tangents       :  0
+		num uvs            :  1556
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  452
+	processing begun of mesh:  Cube.054
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.055
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#38
+		num positions      :  791
+		num normals        :  791
+		num tangents       :  0
+		num uvs            :  1582
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  476
+	processing begun of mesh:  Cube.056
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#39
+		num positions      :  3069
+		num normals        :  3069
+		num tangents       :  0
+		num uvs            :  6138
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  1676
+		WARNING: # of 0 area faces found:  116
+	processing begun of mesh:  Cube.057
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
+	processing begun of mesh:  Cube.058
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  111
+		num normals        :  111
+		num tangents       :  0
+		num uvs            :  222
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  44
+		WARNING: # of 0 area faces found:  4
+	processing begun of mesh:  Cube.059
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#40
+		num positions      :  2191
+		num normals        :  2191
+		num tangents       :  0
+		num uvs            :  4382
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  1196
+	processing begun of mesh:  Cube.060
+		processing begun of material:  azul
+		registered as also a user of material:  azul
+		num positions      :  110
+		num normals        :  110
+		num tangents       :  0
+		num uvs            :  220
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  44
+		WARNING: # of 0 area faces found:  4
+	processing begun of mesh:  MaestroEdificioDerecha
+		WARNING: No materials have been assigned: 
+		num positions      :  29
+		num normals        :  29
+		num tangents       :  0
+		num uvs            :  58
+		num uvs2           :  0
+		num colors         :  0
+		num triangles      :  12
 	processing begun of mesh:  MaestroEdificioDerecha.001
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -1043,18 +1441,8 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  12
-	processing begun of mesh:  Plane
-		processing begun of material:  nuves
-		num positions      :  75
-		num normals        :  75
-		num tangents       :  0
-		num uvs            :  150
-		num uvs2           :  0
-		num colors         :  0
-		num triangles      :  96
-	processing begun of mesh:  CuboAnimado
-		processing begun of material:  rojo
-		registered as also a user of material:  rojo
+	processing begun of mesh:  MaestroEdificioIzquierda
+		WARNING: No materials have been assigned: 
 		num positions      :  29
 		num normals        :  29
 		num tangents       :  0
@@ -1130,27 +1518,19 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 	writing mesh:  arbolesPrimerPlano1
 	writing mesh:  arbolesPrimerPlano2
 	writing mesh:  arbolesPrimerPlano3
-	writing mesh:  Cube.005
+	writing mesh:  ReposicionarArboles
+	writing mesh:  arbolesPrimerPlano1.001
+	writing mesh:  arbolesPrimerPlano2.001
+	writing mesh:  arbolesPrimerPlano3.001
 	writing mesh:  Cube.003
 	writing mesh:  Cube.004
+	writing mesh:  Cube.005
 	writing mesh:  Cube.006
 	writing mesh:  Cube.007
 	writing mesh:  Cube.008
 	writing mesh:  Cube.009
 	writing mesh:  Cube.010
 	writing mesh:  Cube.011
-	writing mesh:  Cube.012
-	writing mesh:  Cube.013
-	writing mesh:  Cube.014
-	writing mesh:  Cube.015
-	writing mesh:  Cube.016
-	writing mesh:  Cube.017
-	writing mesh:  MaestroEdificioIzquierda
-	writing mesh:  MaestroEdificioDerecha
-	writing mesh:  ReposicionarArboles
-	writing mesh:  arbolesPrimerPlano1.001
-	writing mesh:  arbolesPrimerPlano2.001
-	writing mesh:  arbolesPrimerPlano3.001
 	writing mesh:  Cube.001
 	writing mesh:  Cube.002
 	writing mesh:  Cube.018
@@ -1160,9 +1540,52 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 	writing mesh:  Cube.022
 	writing mesh:  Cube.023
 	writing mesh:  Cube.024
+	writing mesh:  Cube.012
+	writing mesh:  Cube.013
+	writing mesh:  Cube.014
+	writing mesh:  Cube.015
+	writing mesh:  Cube.016
+	writing mesh:  Cube.017
+	writing mesh:  Cube
+	writing mesh:  Cube.025
+	writing mesh:  Cube.036
+	writing mesh:  Cube.051
+	writing mesh:  Cube.026
+	writing mesh:  Cube.027
+	writing mesh:  Cube.028
+	writing mesh:  Cube.029
+	writing mesh:  Cube.030
+	writing mesh:  Cube.031
+	writing mesh:  Cube.032
+	writing mesh:  Cube.033
+	writing mesh:  Cube.034
+	writing mesh:  Cube.035
+	writing mesh:  Cube.037
+	writing mesh:  Cube.038
+	writing mesh:  Cube.039
+	writing mesh:  Cube.040
+	writing mesh:  Cube.041
+	writing mesh:  Cube.042
+	writing mesh:  Cube.043
+	writing mesh:  Cube.044
+	writing mesh:  Cube.045
+	writing mesh:  Cube.046
+	writing mesh:  Cube.047
+	writing mesh:  Cube.048
+	writing mesh:  Cube.049
+	writing mesh:  Cube.050
+	writing mesh:  Cube.052
+	writing mesh:  Cube.053
+	writing mesh:  Cube.054
+	writing mesh:  Cube.055
+	writing mesh:  Cube.056
+	writing mesh:  Cube.057
+	writing mesh:  Cube.058
+	writing mesh:  Cube.059
+	writing mesh:  Cube.060
+	writing mesh:  MaestroEdificioDerecha
 	writing mesh:  MaestroEdificioDerecha.001
-	writing mesh:  Plane
-	writing mesh:  CuboAnimado
+	writing mesh:  MaestroEdificioIzquierda
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 2.6893 secs
+elapsed time:  0 min, 5.2278 secs

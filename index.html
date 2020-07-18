@@ -38,26 +38,27 @@
                 position: absolute;
                 background-image: url("./boton.png");
                 background-repeat: no-repeat;
-
+                margin-left: auto;
+                margin-right: auto;
                 width: 208px; /* Definir de acuerdo al ancho de la imagen */
                 height: 116px; /* Definir de acuerdo al alto de la imagen */
                 /* top: 350px;
                 left: 500px; */
                 top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                transition: 0.1s;
+                left: 40%;
+                /* transform: translate(-50%,-50%); */
+                transform-Origin:center;
+                transition: 0.2s;
                 /*display: block;
                 margin-left: auto;
                 margin-right: auto;*/
             }
             #boton:hover
             {
-                
                 transform: scale(1.5,1.5);
                 opacity: 0.9;
-                
             }    
+ 
                 
         </style>
         
@@ -67,7 +68,7 @@
         <script src="ammo.js"></script>
         <script src="babylon.inspector.bundle.js"></script>
         <script src="babylon.gui.js"></script>
-        
+
         <!-- <script src="babylonjs.loaders.min.js"></script>
         <script src="https://preview.babylonjs.com/ammo.js"></script>
         <script src="https://preview.babylonjs.com/cannon.js"></script>
@@ -85,10 +86,16 @@
     </head>
 
    <body>
-       <div id="boton"></div>
-       <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
-       <div id="puntos">0</div>
-       <script src="test.js"></script>
+       
+        <div class="botonClase">
+            <div id="boton"></div>    
+        </div>
+            
+    
+
+        <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+        <div id="puntos">0</div>
+        <script src="test.js"></script>
         
    </body>
 
