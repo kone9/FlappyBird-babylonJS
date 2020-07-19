@@ -1078,26 +1078,30 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num colors         :  0
 		num triangles      :  12
 	processing begun of mesh:  Cube.028
-		processing begun of material:  VerdeCelesteOscuro
-		processing begun of material:  VerdeCeleste
+		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
+		registered as also a user of material:  azul
 		processing begun of multimaterial:  Escenario.Multimaterial#29
-		num positions      :  928
-		num normals        :  928
+		num positions      :  891
+		num normals        :  891
 		num tangents       :  0
-		num uvs            :  1856
+		num uvs            :  1782
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  412
 	processing begun of mesh:  Cube.029
 		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
-		num positions      :  29
-		num normals        :  29
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#30
+		num positions      :  416
+		num normals        :  416
 		num tangents       :  0
-		num uvs            :  58
+		num uvs            :  832
 		num uvs2           :  0
 		num colors         :  0
-		num triangles      :  12
+		num triangles      :  188
 	processing begun of mesh:  Cube.030
 		processing begun of material:  azul
 		registered as also a user of material:  azul
@@ -1130,33 +1134,41 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num triangles      :  28
 	processing begun of mesh:  Cube.033
 		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
-		num positions      :  66
-		num normals        :  66
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#31
+		num positions      :  1296
+		num normals        :  1296
 		num tangents       :  0
-		num uvs            :  132
+		num uvs            :  2592
 		num uvs2           :  0
 		num colors         :  0
-		num triangles      :  28
+		num triangles      :  668
+		WARNING: # of 0 area faces found:  108
 	processing begun of mesh:  Cube.034
 		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
-		num positions      :  29
-		num normals        :  29
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#32
+		num positions      :  1012
+		num normals        :  1012
 		num tangents       :  0
-		num uvs            :  58
+		num uvs            :  2024
 		num uvs2           :  0
 		num colors         :  0
-		num triangles      :  12
+		num triangles      :  556
 	processing begun of mesh:  Cube.035
 		processing begun of material:  azul
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
-		processing begun of multimaterial:  Escenario.Multimaterial#30
-		num positions      :  2096
-		num normals        :  2096
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#33
+		num positions      :  2009
+		num normals        :  2009
 		num tangents       :  0
-		num uvs            :  4192
+		num uvs            :  4018
 		num uvs2           :  0
 		num colors         :  0
 		num triangles      :  1128
@@ -1175,7 +1187,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#31
+		processing begun of multimaterial:  Escenario.Multimaterial#34
 		num positions      :  1166
 		num normals        :  1166
 		num tangents       :  0
@@ -1188,7 +1200,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#32
+		processing begun of multimaterial:  Escenario.Multimaterial#35
 		num positions      :  1327
 		num normals        :  1327
 		num tangents       :  0
@@ -1201,7 +1213,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#33
+		processing begun of multimaterial:  Escenario.Multimaterial#36
 		num positions      :  1869
 		num normals        :  1869
 		num tangents       :  0
@@ -1214,7 +1226,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#34
+		processing begun of multimaterial:  Escenario.Multimaterial#37
 		num positions      :  3792
 		num normals        :  3792
 		num tangents       :  0
@@ -1227,7 +1239,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#35
+		processing begun of multimaterial:  Escenario.Multimaterial#38
 		num positions      :  469
 		num normals        :  469
 		num tangents       :  0
@@ -1300,7 +1312,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#36
+		processing begun of multimaterial:  Escenario.Multimaterial#39
 		num positions      :  3060
 		num normals        :  3060
 		num tangents       :  0
@@ -1333,7 +1345,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#37
+		processing begun of multimaterial:  Escenario.Multimaterial#40
 		num positions      :  778
 		num normals        :  778
 		num tangents       :  0
@@ -1356,7 +1368,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#38
+		processing begun of multimaterial:  Escenario.Multimaterial#41
 		num positions      :  791
 		num normals        :  791
 		num tangents       :  0
@@ -1369,7 +1381,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#39
+		processing begun of multimaterial:  Escenario.Multimaterial#42
 		num positions      :  3069
 		num normals        :  3069
 		num tangents       :  0
@@ -1404,7 +1416,7 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
 		registered as also a user of material:  VidrioCelesteClaro
-		processing begun of multimaterial:  Escenario.Multimaterial#40
+		processing begun of multimaterial:  Escenario.Multimaterial#43
 		num positions      :  2191
 		num normals        :  2191
 		num tangents       :  0
@@ -1414,15 +1426,18 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 		num triangles      :  1196
 	processing begun of mesh:  Cube.060
 		processing begun of material:  azul
+		processing begun of material:  VidrioCelesteClaro
 		registered as also a user of material:  azul
-		num positions      :  110
-		num normals        :  110
+		registered as also a user of material:  VidrioCelesteClaro
+		processing begun of multimaterial:  Escenario.Multimaterial#44
+		num positions      :  2563
+		num normals        :  2563
 		num tangents       :  0
-		num uvs            :  220
+		num uvs            :  5126
 		num uvs2           :  0
 		num colors         :  0
-		num triangles      :  44
-		WARNING: # of 0 area faces found:  4
+		num triangles      :  1420
+		WARNING: # of 0 area faces found:  24
 	processing begun of mesh:  MaestroEdificioDerecha
 		WARNING: No materials have been assigned: 
 		num positions      :  29
@@ -1588,4 +1603,4 @@ Exporter version: 6.4.2, Blender version: 2.82 (sub 7)
 	writing mesh:  MaestroEdificioIzquierda
 ========= Writing of JSON file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 5.2278 secs
+elapsed time:  0 min, 6.37 secs

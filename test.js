@@ -7,6 +7,19 @@
 /// <reference path="ammo.js" />
 /// <reference path="babylon.gui.js"/>
 /// <reference path="babylon.gui.min.js"/>
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -44,9 +57,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 //////////////Esta clase no la uso es de ejemplo para tener una idea de como usar clases////////////////////////
-var ObjetoFisico //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
+/** @description Esta clase representa un objeto que tiene propiedades físicas".
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh que se ve en pantalla.
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh para usar como la colision.
+    */
+var ObjetoRigidBody //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
  = /** @class */ (function () {
-    function ObjetoFisico(mallaParaRepresentarElObjeto, mallaCuerpoFisico) {
+    function ObjetoRigidBody(mallaParaRepresentarElObjeto, mallaCuerpoFisico) {
         //importante para que funcione los cuerpor rigidos hijos tienen
         //que ser creados como se ven en las siguientes lineas
         //si cambias las lineas de posición no funcionaran correctamente
@@ -54,18 +71,22 @@ var ObjetoFisico //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE B
         this.CrearCuerpoRigidoEnColision(); //creo el cuerpo Rigido en la colision
         this.mesh = mallaParaRepresentarElObjeto; //obtengo la malla de objeto
         this.CrearCuerpoRigidoEnMalla(); //creo el cuerpo Rigido a la malla que controla la colisicion se suman las masas
-        this.maestroFisico = this.mesh.physicsImpostor;
+        this.maestroFisico = this.mesh.physicsImpostor; //hago que el maestro físico sea el de la malla principal
         this.posicion = this.mesh.position; //posicion de la malla
         this.material = this.mesh.material; //material de la malla
         this.posicionColision = this.meshColision.position; //posicion del cuerpo Rigido
     }
-    ObjetoFisico.prototype.CrearCuerpoRigidoEnColision = function () {
+    ObjetoRigidBody.prototype.CrearCuerpoRigidoEnColision = function () {
         this.meshColision.physicsImpostor = new BABYLON.PhysicsImpostor(this.meshColision, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0, friction: 0, restitution: 0 }, scene); //creo el cuerpoFisico al
     };
-    ObjetoFisico.prototype.CrearCuerpoRigidoEnMalla = function () {
+    ObjetoRigidBody.prototype.CrearCuerpoRigidoEnMalla = function () {
         this.mesh.physicsImpostor = new BABYLON.PhysicsImpostor(this.mesh, BABYLON.PhysicsImpostor.NoImpostor, { mass: 0.1, friction: 1, restitution: 0 }, scene);
     };
-    Object.defineProperty(ObjetoFisico.prototype, "mesh", {
+    Object.defineProperty(ObjetoRigidBody.prototype, "mesh", {
+        /** @description GET o SET  la malla que se ve en pantalla.
+        * @param {BABYLON.AbstractMesh}BABYLON.AbstractMesh mesh a cambiar.
+        * @return {number} BABYLON.AbstractMesh
+        */
         get: function () {
             return this._mesh;
         },
@@ -75,77 +96,126 @@ var ObjetoFisico //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE B
         enumerable: false,
         configurable: true
     });
-    ObjetoFisico.prototype.DestruirFisicaDeEsteObjeto = function (destruirFisicas) {
+    /** @description Destruye el objeto fisico que se encuentra en el rigidbody con dispose()
+    * @param {boolean}boolean destruirFisicas.
+    * @return {void} void
+    */
+    ObjetoRigidBody.prototype.DestruirFisicaDeEsteObjeto = function (destruirFisicas) {
         if (destruirFisicas === void 0) { destruirFisicas = false; }
         this.maestroFisico.dispose();
     };
-    Object.defineProperty(ObjetoFisico.prototype, "meshColision", {
+    Object.defineProperty(ObjetoRigidBody.prototype, "meshColision", {
+        /** @description GET o SET la malla de la colision de este objeto
+        * @param {BABYLON.AbstractMesh }BABYLON.AbstractMesh  mesh.
+        * @return {BABYLON.AbstractMesh} BABYLON.AbstractMesh
+        */
         get: function () {
             return this._meshColision;
         },
-        set: function (value) {
-            this._meshColision = value;
+        set: function (mesh) {
+            this._meshColision = mesh;
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjetoFisico.prototype, "posicionColision", {
+    Object.defineProperty(ObjetoRigidBody.prototype, "posicionColision", {
+        /** @description GET o SET la posicion de la malla que representa la colisión.
+        * @param {BABYLON.Vector3}BABYLON.Vector3 posición de la colision.
+        * @return {number} BABYLON.Vector3
+        */
         get: function () {
             return this._posicionColision;
         },
-        set: function (value) {
-            this._posicionColision = value;
+        set: function (posicion) {
+            this._posicionColision = posicion;
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjetoFisico.prototype, "posicion", {
+    Object.defineProperty(ObjetoRigidBody.prototype, "posicion", {
+        /** @description GET o SET la posición del objeto padre que mueve a todo el objetoFisico.
+        * @param {BABYLON.Vector3}BABYLON.Vector3 posición de la colision.
+        * @return {number} BABYLON.Vector3
+        */
         get: function () {
             return this._posicion;
         },
-        set: function (value) {
-            this._posicion = value;
+        set: function (posicion) {
+            this._posicion = posicion;
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjetoFisico.prototype, "material", {
+    Object.defineProperty(ObjetoRigidBody.prototype, "material", {
+        /** @description GET o SET el material de la malla visible pantalla.
+        * @param {BABYLON.Material}BABYLON.Material material.
+        * @return {BABYLON.Material} BABYLON.Material
+        */
         get: function () {
             return this._material;
         },
-        set: function (value) {
-            this._material = value;
+        set: function (material) {
+            this._material = material;
         },
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ObjetoFisico.prototype, "maestroFisico", {
+    Object.defineProperty(ObjetoRigidBody.prototype, "maestroFisico", {
+        /** @description GET o SET el objeto padre que mueve a todo el objetoFisico.
+        * @param {BABYLON.PhysicsImpostor}BABYLON.PhysicsImpostor cuerpoFisico.
+        * @return {BABYLON.PhysicsImpostor} BABYLON.PhysicsImpostor
+        */
         get: function () {
             return this._maestroFisico;
         },
-        set: function (value) {
-            this._maestroFisico = value;
+        set: function (cuerpoFisico) {
+            this._maestroFisico = cuerpoFisico;
         },
         enumerable: false,
         configurable: true
     });
-    ObjetoFisico.prototype.Impulsar = function (fuerzaImpulso) {
-        if (fuerzaImpulso === void 0) { fuerzaImpulso = 0.5; }
-        this.maestroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
-        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0, fuerzaImpulso, 0), this.maestroFisico.getObjectCenter());
-    };
-    ObjetoFisico.prototype.ImpulsarMorir = function (fuerzaImpulso) {
-        if (fuerzaImpulso === void 0) { fuerzaImpulso = -0.4; }
-        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0, fuerzaImpulso, 0), this.maestroFisico.getObjectCenter());
-    };
-    ObjetoFisico.prototype.ColisionVisible = function (cantidadDeVisibilidad) {
+    /** @description Hace visible/invisible la malla que representa la colision de este objeto.
+    * @param {number}number cantidadDeVisibilidad.
+    * @return {void} void
+    */
+    ObjetoRigidBody.prototype.ColisionVisible = function (cantidadDeVisibilidad) {
         if (cantidadDeVisibilidad === void 0) { cantidadDeVisibilidad = 1; }
         this.meshColision.isVisible = true;
         this.meshColision.visibility = cantidadDeVisibilidad;
     };
-    return ObjetoFisico;
+    return ObjetoRigidBody;
 }());
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////IMPLEMENTACION DE LA CLASE PÁJARO////////IMPLEMENTACION DE LA CLASE PÁJARO
+/** @description Esta clase representa un pajaro que tiene propiedades físicas".
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh que se ve en pantalla.
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh para usar como la colision.
+    */
+var Pajaro = /** @class */ (function (_super) {
+    __extends(Pajaro, _super);
+    function Pajaro(mallaParaRepresentarElObjeto, mallaCuerpoFisico) {
+        return _super.call(this, mallaParaRepresentarElObjeto, mallaCuerpoFisico) || this;
+    }
+    /** @description determina el impulso del pájaro en el eje "Y".
+     * @param {number} number Fuerza de impulso.
+     * @return {number} void
+    */
+    Pajaro.prototype.Impulsar = function (fuerzaImpulso) {
+        if (fuerzaImpulso === void 0) { fuerzaImpulso = 0.5; }
+        this.maestroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
+        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0, fuerzaImpulso, 0), this.maestroFisico.getObjectCenter());
+    };
+    /** @description determina el impulso del pájaro en el eje "Y" al morir.
+     * @param {number} number Fuerza de impulso.
+     * @return {number} void
+    */
+    Pajaro.prototype.ImpulsarMorir = function (fuerzaImpulso) {
+        if (fuerzaImpulso === void 0) { fuerzaImpulso = -0.4; }
+        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0, fuerzaImpulso, 0), this.maestroFisico.getObjectCenter());
+    };
+    return Pajaro;
+}(ObjetoRigidBody));
+//////////////////////////////////////////////////////////////////////////////////////////////////
 /////aqui empieza la aplicación/////////
 var canvas = document.getElementById("renderCanvas"); //referencia al html con la etiqueta renderCanvas
 var engine = new BABYLON.Engine(canvas, true); //creo el motor
@@ -176,7 +246,7 @@ function CrearEscenaPrincipal(engine, canvas) {
     var camaraSigueJugador = false; //si la camara sigue al jugador
     var camaraSigueReposicionar = false; //si la camara sigue al objeto reposicionar
     var desactivarCamaraRotadoraPrueba = true; //para activar la camara de prueba que rota sobre un punto no es la importada desde Blender3D
-    var ActivarEditor = true; //SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
+    var ActivarEditor = false; //SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
     ////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////COMIENZA EL JUEGO/////////////////////////////////////////////////
@@ -193,7 +263,7 @@ function CrearEscenaPrincipal(engine, canvas) {
         scene.debugLayer.show();
     }
     //observadores personalizados
-    scene.onGameOver = new BABYLON.Observable(); //incia un observable de tipo puedo reiniciar
+    scene.onGameOver = new BABYLON.Observable(); //incia un observable de tipo puedo reiniciar cuando es GameOver buscar info sobre observables en babylon
     scene.onIniciar = new BABYLON.Observable();
     var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(10, 0, 5), scene);
     camera.target = new BABYLON.Vector3(20, 10, 0);
@@ -337,8 +407,8 @@ function CrearEscenaPrincipal(engine, canvas) {
         //////PAJARO////////////////PAJARO////////////////////////PAJARO////////   
         var ObtenerpajaroColision = scene.getNodeByName("pajaroColision");
         var ObtenerPajaro = scene.getNodeByName("pajaro");
-        var pajaro = new ObjetoFisico(ObtenerPajaro, ObtenerpajaroColision);
-        pajaro.ColisionVisible(visibleColisionPajaro);
+        var pajaro = new Pajaro(ObtenerPajaro, ObtenerpajaroColision); //creo un nuevo objeto físico llamado pajaro recibe como parametro la malla y la malla de colisión
+        pajaro.ColisionVisible(visibleColisionPajaro); //para ver la colsión de la malla.
         // asi se detectan colisiones en babylon con el metodo onCollideEvent
         // uso como referencía physics impostor de un objeto como el pájaro
         pajaro.maestroFisico.onCollideEvent = function (collider, collidedWith) {
@@ -347,10 +417,6 @@ function CrearEscenaPrincipal(engine, canvas) {
                 puedoReinciar = true;
                 pajaro.ImpulsarMorir(); //impulso al morir por defecto -0.4
                 scene.onGameOver.notifyObservers(puedoReinciar); //cuando llego aqui notifico que es game over
-                //console.log("GAMEOVER desde la colisicón del pajaro: " + this.gameOverPublico);
-                //pajaroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaroFisico.getObjectCenter());
-                //pajaro.maestroFisico.applyImpulse(new BABYLON.Vector3(0, -0.9, 0), pajaro.maestroFisico.getObjectCenter());
-                //pajaro.maestroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaro.maestroFisico.getObjectCenter())
             }
         };
         if (desactivarFisicasPajaro) //si desactivo las físicas

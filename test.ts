@@ -9,7 +9,11 @@
 /// <reference path="babylon.gui.min.js"/>
 
 //////////////Esta clase no la uso es de ejemplo para tener una idea de como usar clases////////////////////////
-class ObjetoFisico //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
+/** @description Esta clase representa un objeto que tiene propiedades físicas".
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh que se ve en pantalla.
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh para usar como la colision.
+    */
+class ObjetoRigidBody //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE BABYLON EN ESTE CLASO EL MOLDE PARA UN PAJARO FISICO
 {
     private _mesh: BABYLON.AbstractMesh;//guardo el mesh del pajaro en esta variable
     private _meshColision: BABYLON.AbstractMesh;
@@ -27,81 +31,143 @@ class ObjetoFisico //EJEMPLO DE COMO IMPLEMENTAR UNA CLASE USANDO LOS METODOS DE
         this.CrearCuerpoRigidoEnColision()//creo el cuerpo Rigido en la colision
         this.mesh = mallaParaRepresentarElObjeto;//obtengo la malla de objeto
         this.CrearCuerpoRigidoEnMalla();//creo el cuerpo Rigido a la malla que controla la colisicion se suman las masas
-        this.maestroFisico = this.mesh.physicsImpostor;
+        this.maestroFisico = this.mesh.physicsImpostor;//hago que el maestro físico sea el de la malla principal
 
         this.posicion = this.mesh.position;//posicion de la malla
         this.material = this.mesh.material;//material de la malla
         this.posicionColision = this.meshColision.position;//posicion del cuerpo Rigido
     }
 
-    private CrearCuerpoRigidoEnColision()//crea el cuerpo rigido a la colisión "TIENE COLISION"
+    private CrearCuerpoRigidoEnColision():void//crea el cuerpo rigido a la colisión "TIENE COLISION"
     {
         this.meshColision.physicsImpostor = new BABYLON.PhysicsImpostor(this.meshColision, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0, friction: 0, restitution: 0 }, scene);//creo el cuerpoFisico al
     }
-    private CrearCuerpoRigidoEnMalla()//crea el cuerpo rigido a la malla importante "NO TIENE COLISION"
+    private CrearCuerpoRigidoEnMalla():void//crea el cuerpo rigido a la malla importante "NO TIENE COLISION"
     {
         this.mesh.physicsImpostor = new BABYLON.PhysicsImpostor(this.mesh, BABYLON.PhysicsImpostor.NoImpostor, { mass: 0.1, friction: 1, restitution: 0 }, scene);
     }
-    public get mesh(): BABYLON.AbstractMesh {//para obtener la malla de este objeto
+    /** @description GET o SET  la malla que se ve en pantalla.
+    * @param {BABYLON.AbstractMesh}BABYLON.AbstractMesh mesh a cambiar. 
+    * @return {number} BABYLON.AbstractMesh
+    */
+    public get mesh():BABYLON.AbstractMesh
+    {//para obtener la malla de este objeto
         return this._mesh;
     }
-    public set mesh(value: BABYLON.AbstractMesh) {//para cambiar la malla de este objeto
+    public set mesh(value: BABYLON.AbstractMesh)
+    {//para cambiar la malla de este objeto
         this._mesh = value;
     }
-    public DestruirFisicaDeEsteObjeto(destruirFisicas:boolean= false)//destruir la física del objeto
+    /** @description Destruye el objeto fisico que se encuentra en el rigidbody con dispose()
+    * @param {boolean}boolean destruirFisicas. 
+    * @return {void} void
+    */
+    public DestruirFisicaDeEsteObjeto(destruirFisicas:boolean= false):void//destruir la física del objeto
     {
         this.maestroFisico.dispose();
     }
-    public get meshColision(): BABYLON.AbstractMesh {//obtengo la malla de la colision de este objeto
+    /** @description GET o SET la malla de la colision de este objeto
+    * @param {BABYLON.AbstractMesh }BABYLON.AbstractMesh  mesh. 
+    * @return {BABYLON.AbstractMesh} BABYLON.AbstractMesh
+    */
+    public get meshColision():BABYLON.AbstractMesh 
+    {
         return this._meshColision;
     }
-    public set meshColision(value: BABYLON.AbstractMesh) {//cambio la malla de la colison de este objeto
-        this._meshColision = value;
+    public set meshColision(mesh: BABYLON.AbstractMesh)//cambio la malla de la colison de este objeto
+    {
+        this._meshColision = mesh;
     }
-    public get posicionColision(): BABYLON.Vector3 {//obtengo la posicion de la colision
+    /** @description GET o SET la posicion de la malla que representa la colisión.
+    * @param {BABYLON.Vector3}BABYLON.Vector3 posición de la colision. 
+    * @return {number} BABYLON.Vector3
+    */
+    public get posicionColision(): BABYLON.Vector3//obtengo la posicion de la colision 
+    {
         return this._posicionColision;
     }
-    public set posicionColision(value: BABYLON.Vector3) {
-        this._posicionColision = value;
+    public set posicionColision(posicion: BABYLON.Vector3)//cambio la posición
+    {
+        this._posicionColision = posicion;
     }
+    /** @description GET o SET la posición del objeto padre que mueve a todo el objetoFisico.
+    * @param {BABYLON.Vector3}BABYLON.Vector3 posición de la colision. 
+    * @return {number} BABYLON.Vector3
+    */
     public get posicion(): BABYLON.Vector3 {
         return this._posicion;
     }
-    public set posicion(value: BABYLON.Vector3) {
-        this._posicion = value;
+    public set posicion(posicion: BABYLON.Vector3) {
+        this._posicion = posicion;
     }
+    /** @description GET o SET el material de la malla visible pantalla.
+    * @param {BABYLON.Material}BABYLON.Material material. 
+    * @return {BABYLON.Material} BABYLON.Material
+    */
     public get material(): BABYLON.Material {
         return this._material;
     }
-    public set material(value: BABYLON.Material) {
-        this._material = value;
+    public set material(material: BABYLON.Material) {
+        this._material = material;
     }
+    /** @description GET o SET el objeto padre que mueve a todo el objetoFisico.
+    * @param {BABYLON.PhysicsImpostor}BABYLON.PhysicsImpostor cuerpoFisico. 
+    * @return {BABYLON.PhysicsImpostor} BABYLON.PhysicsImpostor
+    */
     public get maestroFisico(): BABYLON.PhysicsImpostor {
         return this._maestroFisico;
     }
-    public set maestroFisico(value: BABYLON.PhysicsImpostor) {
-        this._maestroFisico = value;
-    }
-    public Impulsar(fuerzaImpulso:number = 0.5)//acción volar
+    public set maestroFisico(cuerpoFisico: BABYLON.PhysicsImpostor)
     {
-        this.maestroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
-        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0,fuerzaImpulso,0), this.maestroFisico.getObjectCenter());
+        this._maestroFisico = cuerpoFisico;
     }
-    public ImpulsarMorir(fuerzaImpulso:number = -0.4)//acción volar
-    {
-        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0,fuerzaImpulso,0), this.maestroFisico.getObjectCenter());
-    }
-    public ColisionVisible(cantidadDeVisibilidad:number = 1)
+    /** @description Hace visible/invisible la malla que representa la colision de este objeto.
+    * @param {number}number cantidadDeVisibilidad. 
+    * @return {void} void
+    */
+    public ColisionVisible(cantidadDeVisibilidad:number = 1):void
     {
         this.meshColision.isVisible = true;
         this.meshColision.visibility = cantidadDeVisibilidad;
     }
 
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////IMPLEMENTACION DE LA CLASE PÁJARO////////IMPLEMENTACION DE LA CLASE PÁJARO
+/** @description Esta clase representa un pajaro que tiene propiedades físicas".
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh que se ve en pantalla.
+     * @param {BABYLON.AbstractMesh} BABYLON.AbstractMesh mesh para usar como la colision.
+    */
+class Pajaro extends ObjetoRigidBody
+{
+    constructor(mallaParaRepresentarElObjeto:BABYLON.AbstractMesh,mallaCuerpoFisico:BABYLON.AbstractMesh)
+    {
+        super(mallaParaRepresentarElObjeto,mallaCuerpoFisico);
+    }
+
+    /** @description determina el impulso del pájaro en el eje "Y".
+     * @param {number} number Fuerza de impulso.
+     * @return {number} void
+    */
+    public Impulsar(fuerzaImpulso:number = 0.5):void//acción volar
+    {
+        this.maestroFisico.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
+        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0,fuerzaImpulso,0), this.maestroFisico.getObjectCenter());
+    }
+    /** @description determina el impulso del pájaro en el eje "Y" al morir.
+     * @param {number} number Fuerza de impulso.
+     * @return {number} void
+    */
+    public ImpulsarMorir(fuerzaImpulso:number = -0.4):void//acción al morir
+    {
+        this.maestroFisico.applyImpulse(new BABYLON.Vector3(0,fuerzaImpulso,0), this.maestroFisico.getObjectCenter());
+    }
 
 
+}
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////aqui empieza la aplicación/////////
 var canvas: HTMLCanvasElement = document.getElementById("renderCanvas") as HTMLCanvasElement;//referencia al html con la etiqueta renderCanvas
@@ -115,6 +181,7 @@ window.addEventListener("resize", function () { //agrego el evento para que cons
 
 
 var scene:BABYLON.Scene;//Creo la escena afuera para poder reiniciar
+
 
 
 function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.Scene //retorna la escena tomo como parametro el motor
@@ -139,7 +206,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     let camaraSigueJugador:boolean = false;//si la camara sigue al jugador
     let camaraSigueReposicionar:boolean = false;//si la camara sigue al objeto reposicionar
     let desactivarCamaraRotadoraPrueba:boolean= true;//para activar la camara de prueba que rota sobre un punto no es la importada desde Blender3D
-    let ActivarEditor:boolean = true;//SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
+    let ActivarEditor:boolean = false;//SI MUESTRO O NO MUESTRO EL EDITOR que posee babylon en el navegador
     ////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////COMIENZA EL JUEGO/////////////////////////////////////////////////
@@ -159,7 +226,7 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
     }
 
     //observadores personalizados
-    scene.onGameOver = new BABYLON.Observable();//incia un observable de tipo puedo reiniciar
+    scene.onGameOver = new BABYLON.Observable();//incia un observable de tipo puedo reiniciar cuando es GameOver buscar info sobre observables en babylon
     scene.onIniciar = new BABYLON.Observable();
 
     var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(10, 0, 5), scene);
@@ -341,8 +408,9 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
             //////PAJARO////////////////PAJARO////////////////////////PAJARO////////   
             let ObtenerpajaroColision: BABYLON.AbstractMesh = scene.getNodeByName("pajaroColision") as BABYLON.AbstractMesh;
             let ObtenerPajaro: BABYLON.AbstractMesh = scene.getNodeByName("pajaro") as BABYLON.AbstractMesh;
-            let pajaro:ObjetoFisico = new ObjetoFisico(ObtenerPajaro,ObtenerpajaroColision);
-            pajaro.ColisionVisible(visibleColisionPajaro);
+            let pajaro:Pajaro = new Pajaro(ObtenerPajaro,ObtenerpajaroColision);//creo un nuevo objeto físico llamado pajaro recibe como parametro la malla y la malla de colisión
+            pajaro.ColisionVisible(visibleColisionPajaro);//para ver la colsión de la malla.
+            
 
             // asi se detectan colisiones en babylon con el metodo onCollideEvent
             // uso como referencía physics impostor de un objeto como el pájaro
@@ -352,12 +420,10 @@ function CrearEscenaPrincipal(engine:BABYLON.Engine,canvas:HTMLElement):BABYLON.
                     puedoReinciar = true;
                     pajaro.ImpulsarMorir();//impulso al morir por defecto -0.4
                     scene.onGameOver.notifyObservers(puedoReinciar);//cuando llego aqui notifico que es game over
-                    //console.log("GAMEOVER desde la colisicón del pajaro: " + this.gameOverPublico);
-                    //pajaroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaroFisico.getObjectCenter());
-                    //pajaro.maestroFisico.applyImpulse(new BABYLON.Vector3(0, -0.9, 0), pajaro.maestroFisico.getObjectCenter());
-                    //pajaro.maestroFisico.applyImpulse(new BABYLON.Vector3(0, -0.4, 0), pajaro.maestroFisico.getObjectCenter())
+                   
                 }
             };
+            
             if(desactivarFisicasPajaro)//si desactivo las físicas
             {
                 pajaro.DestruirFisicaDeEsteObjeto();
