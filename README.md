@@ -10,6 +10,8 @@ de hacer un videojuego
 
 Test de las mecánicas subidas a itchio,peso final del archivo 2.82MB
 comprimido 726kb 
+Este proyecto es de la versión escrita sin programación orientada a objetos
+pronto voy a actualizarlo,sin embargo lo dejo aqui
 https://kone9.itch.io/flappybird-in-babylonjs
 
 
