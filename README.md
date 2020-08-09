@@ -2,8 +2,10 @@
 ![Alt Text](https://media.giphy.com/media/PjP4z5IyOP0GZ9ladE/source.gif)
 
 
-En esta práctica trato de hacer un flappybird con babylon.js para entender cómo funciona el motor y qué herramientas posee para el desarrollo de videojuegos.
-Por ahora no voy a hacer tutoriales sobre babylon.js ya que me parece que Godot sigue siendo una mejor herramienta incluso para web,sin embargo dejo el código fuente por si alguien quiere ver como hice el proyecto
+En esta desarrollo un flappybird con babylon.js y Blender3D para entender cómo funciona el motor y qué herramientas posee para el desarrollo de videojuegos.
+Por ahora encontre un gran rendimiento en el motor y estoy configurando webpack para organizar los assets automaticamente en un archivo principal y usar typescript con clases/herencia y toda las ventajas de la programación orientada a objetos a la hora
+de hacer un videojuego
+
 
 
 Test de las mecánicas subidas a itchio,peso final del archivo 2.82MB
