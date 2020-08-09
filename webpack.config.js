@@ -1,5 +1,6 @@
 const path = require("path");
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const miniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports =
 {
@@ -23,6 +24,16 @@ module.exports =
                 test:/\.ts?$/,
                 loader:"ts-loader"
             },
+            
+            {
+                test: /\.css$/i,//testea todos los archivos que termine con css
+                use:
+                [
+                    {loader: miniCssExtractPlugin.loader},
+                    {loader:'css-loader'},//llama al css dentro del javascript y luego es convertido junto con el código a la carpeta public
+                ]            
+            },
+            
             {
                 exclude: '/node_modules/'
             }
@@ -34,7 +45,14 @@ module.exports =
         new htmlWebpackPlugin
         (
             {
-                template:'./src/index.html'
+                template:'./src/index.html'//relacionado donde esta el archivo principalñ
+            }
+        ),
+        new miniCssExtractPlugin
+        (
+            {
+                filename: 'bundle.css',
+                //template:'./src/css'//ubicacion de la carpeta principal
             }
         )
     ],

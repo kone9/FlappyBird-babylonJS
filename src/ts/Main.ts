@@ -8,7 +8,9 @@
 // // // /// <reference path="./babylon/ammo.js" />
 // // // ////////////////////////////////////////////////////////////////////o
 
+
 import * as BABYLON from 'babylonjs';
+import './../css/style.css';//importa css al archivo Main
 
 
 

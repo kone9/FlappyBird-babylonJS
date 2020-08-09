@@ -28,7 +28,7 @@ html, body {
 #boton
 {
     position: absolute;
-    background-image: url("./../imagenesUI/boton.png");
+    background-image: url("./../assets/images/boton.png");
     background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;

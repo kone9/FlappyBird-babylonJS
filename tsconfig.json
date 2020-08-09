@@ -15,7 +15,7 @@
           "es5"
       ],
       "declaration": true,
-      "outDir": "./src"
+      "outDir": "./src/ts/dts"
   },
   "files": [
       "src/ts/Main.ts"
